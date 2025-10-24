@@ -3,6 +3,8 @@
 import { useRouter, usePathname } from '@/i18n/navigation';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { Button } from './ui/button';
+import { GlobeIcon } from 'lucide-react';
 
 export default function LanguageSwitch() {
   const router = useRouter();
@@ -18,11 +20,12 @@ export default function LanguageSwitch() {
   };
 
   return (
-    <button
+    <Button
       onClick={toggleLanguage}
-      className="px-3 py-1 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
+      className="cursor-pointer"
     >
+        <GlobeIcon className="w-4 h-4 me-2" />
       {currentLocale === 'en' ? 'ع' : 'En'}
-    </button>
+    </Button>
   );
 }

@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { hasLocale } from 'next-intl';
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 
 type Props = {
@@ -34,7 +35,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const fontClass = 'font-sans';
 
   return (
-    <html lang={locale}  dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning={true}>
       <head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -46,9 +47,12 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body
         className={`${fontClass} antialiased`}
       >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
