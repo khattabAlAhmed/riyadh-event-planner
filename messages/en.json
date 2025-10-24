@@ -1,0 +1,11 @@
+{
+    "HomePage": {
+        "test-text": "Test text",
+        "title": "My App",
+        "welcome": "Welcome to our application!"
+    },
+    "LanguageSwitch": {
+        "switchToArabic": "Switch to Arabic",
+        "switchToEnglish": "Switch to English"
+    }
+}

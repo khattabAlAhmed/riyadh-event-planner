@@ -1,0 +1,11 @@
+{
+    "HomePage": {
+        "test-text": "نص تجريبي",
+        "title": "تطبيقي",
+        "welcome": "مرحباً بك في تطبيقنا!"
+    },
+    "LanguageSwitch": {
+        "switchToArabic": "التبديل إلى العربية",
+        "switchToEnglish": "التبديل إلى الإنجليزية"
+    }
+}
