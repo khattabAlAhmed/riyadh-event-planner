@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import { hasLocale } from 'next-intl';
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 
 type Props = {
@@ -53,6 +54,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {children}
         </NextIntlClientProvider>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );
