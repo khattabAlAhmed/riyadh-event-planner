@@ -1,29 +1,36 @@
 import * as React from 'react';
 
-/**
- * Creates a strict React context that throws an error if used outside the provider.
- * Returns a tuple of [Provider, useHook] for convenient usage.
- *
- * @param contextName - The name of the context for error messages
- * @returns A tuple containing [Provider, useHook]
- */
-export function getStrictContext<T>(contextName: string) {
+function getStrictContext<T>(
+  name?: string,
+): readonly [
+  ({
+    value,
+    children,
+  }: {
+    value: T;
+    children?: React.ReactNode;
+  }) => React.JSX.Element,
+  () => T,
+] {
   const Context = React.createContext<T | undefined>(undefined);
 
-  const Provider = ({ value, children }: { value: T; children: React.ReactNode }) => {
-    return <Context.Provider value={value}>{children}</Context.Provider>;
-  };
+  const Provider = ({
+    value,
+    children,
+  }: {
+    value: T;
+    children?: React.ReactNode;
+  }) => <Context.Provider value={value}>{children}</Context.Provider>;
 
-  const useContext = () => {
-    const context = React.useContext(Context);
-    if (context === undefined) {
-      throw new Error(
-        `${contextName} must be used within a ${contextName}Provider`
-      );
+  const useSafeContext = () => {
+    const ctx = React.useContext(Context);
+    if (ctx === undefined) {
+      throw new Error(`useContext must be used within ${name ?? 'a Provider'}`);
     }
-    return context;
+    return ctx;
   };
 
-  return [Provider, useContext] as const;
+  return [Provider, useSafeContext] as const;
 }
 
+export { getStrictContext };

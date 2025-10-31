@@ -5,11 +5,14 @@ import { useTranslations, useLocale } from 'next-intl';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { PortfolioCard } from '@/components/shared/PortfolioCard';
 import { ShareButtons } from '@/components/shared/ShareButtons';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { motion } from 'framer-motion';
-import { staggerContainer } from '@/lib/motion-variants';
 import { portfolioItems } from '@/data/portfolio-items';
-
+import {
+  Tabs,
+  TabsPanel,
+  TabsPanels,
+  TabsList,
+  TabsTab,
+} from '@/components/animate-ui/components/base/tabs';
 export default function PortfolioPage() {
   const t = useTranslations('Portfolio');
   const locale = useLocale();
@@ -37,33 +40,38 @@ export default function PortfolioPage() {
 
       <Tabs value={selectedFilter} onValueChange={setSelectedFilter} className="mt-8">
         <TabsList className="grid w-full grid-cols-6">
-          <TabsTrigger value="all">{t('filters.all')}</TabsTrigger>
-          <TabsTrigger value="wedding">{t('filters.weddings')}</TabsTrigger>
-          <TabsTrigger value="birthday">{t('filters.birthdays')}</TabsTrigger>
-          <TabsTrigger value="exhibition">{t('filters.exhibitions')}</TabsTrigger>
-          <TabsTrigger value="conference">{t('filters.conferences')}</TabsTrigger>
-          <TabsTrigger value="corporate">{t('filters.corporate')}</TabsTrigger>
+          <TabsTab value="all">{t('filters.all')}</TabsTab>
+          <TabsTab value="wedding">{t('filters.weddings')}</TabsTab>
+          <TabsTab value="birthday">{t('filters.birthdays')}</TabsTab>
+          <TabsTab value="exhibition">{t('filters.exhibitions')}</TabsTab>
+          <TabsTab value="conference">{t('filters.conferences')}</TabsTab>
+          <TabsTab value="corporate">{t('filters.corporate')}</TabsTab>
         </TabsList>
 
-        <TabsContent value={selectedFilter} className="mt-8">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {filteredItems.map((item) => (
-              <PortfolioCard
-                key={item.id}
-                title={getLocalizedContent(item.title)}
-                type={getTranslatedType(item.type)}
-                date={item.date}
-                description={getLocalizedContent(item.description)}
-                image={item.image}
-              />
-            ))}
-          </motion.div>
-        </TabsContent>
+        <TabsPanels className="mt-8">
+          {['all', 'wedding', 'birthday', 'exhibition', 'conference', 'corporate'].map((filterValue) => {
+            const items = filterValue === 'all'
+              ? portfolioItems
+              : portfolioItems.filter(item => item.type === filterValue);
+            
+            return (
+              <TabsPanel key={filterValue} value={filterValue}>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {items.map((item) => (
+                    <PortfolioCard
+                      key={item.id}
+                      title={getLocalizedContent(item.title)}
+                      type={getTranslatedType(item.type)}
+                      date={item.date}
+                      description={getLocalizedContent(item.description)}
+                      image={item.image}
+                    />
+                  ))}
+                </div>
+              </TabsPanel>
+            );
+          })}
+        </TabsPanels>
       </Tabs>
 
       <div className="mt-8 flex justify-center">
