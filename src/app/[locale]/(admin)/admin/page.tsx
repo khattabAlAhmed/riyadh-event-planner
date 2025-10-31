@@ -1,6 +1,6 @@
 import { getAdminStats } from '@/server/admin';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { StatusBadge } from '@/components/admin/StatusBadge';
+import { StatusBadge, QuoteStatus, ContactStatus } from '@/components/admin/StatusBadge';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { FileText, MessageSquare, TrendingUp, Clock } from 'lucide-react';
@@ -166,7 +166,7 @@ export default async function AdminDashboardPage() {
                       {format(new Date(quote.createdAt), 'MMM dd, yyyy')}
                     </p>
                   </div>
-                  <StatusBadge status={quote.status} />
+                  <StatusBadge status={quote.status as QuoteStatus} />
                 </div>
               ))}
               {stats.quotes.recent.length === 0 && (
@@ -194,7 +194,7 @@ export default async function AdminDashboardPage() {
                       {format(new Date(contact.createdAt), 'MMM dd, yyyy')}
                     </p>
                   </div>
-                  <StatusBadge status={contact.status} />
+                  <StatusBadge status={contact.status as ContactStatus} />
                 </div>
               ))}
               {stats.contacts.recent.length === 0 && (
