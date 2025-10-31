@@ -6,7 +6,8 @@ import { Link } from '@/i18n/navigation';
 import { fadeIn, slideUp } from '@/lib/motion-variants';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-
+import { FireworksBackground } from '../animate-ui/components/backgrounds/fireworks';
+import { useTheme } from 'next-themes';
 interface HeroProps {
   title: string;
   subtitle: string;
@@ -14,6 +15,7 @@ interface HeroProps {
   ctaHref?: string;
   backgroundImage?: string;
   className?: string;
+  showFireworks?: boolean;
 }
 
 export function Hero({
@@ -23,7 +25,9 @@ export function Hero({
   ctaHref = '/quote-request',
   backgroundImage,
   className,
+  showFireworks,
 }: HeroProps) {
+  const { resolvedTheme: theme } = useTheme();
   return (
     <section
       className={cn(
@@ -41,6 +45,13 @@ export function Hero({
             className="object-cover opacity-20"
             priority
           />
+          {showFireworks && (
+            <FireworksBackground
+              className="absolute inset-0 flex items-center justify-center rounded-xl"
+              color={theme === 'dark' ? 'yellow' : 'oklch(0.8903 0.1739 171.2690)'}
+              population={1}
+            />
+          )}
         </div>
       )}
       <div className="container mx-auto px-4 relative z-10">

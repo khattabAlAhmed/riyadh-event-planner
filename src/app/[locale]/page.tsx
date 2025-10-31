@@ -17,12 +17,13 @@ import { PartyPopper, Building2, Package, Users, Award, Clock, Heart } from 'luc
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { generateLocalBusinessSchema, generateBreadcrumbSchema, renderJsonLd } from '@/lib/structured-data';
+import { useTheme } from 'next-themes';
 
 export default function HomePage() {
   const t = useTranslations('HomePage');
   const tServices = useTranslations('Services');
   const locale = useLocale();
-
+  const { resolvedTheme: theme } = useTheme();
   // Get first 6 portfolio items for preview
   const featuredPortfolio = portfolioItems.slice(0, 6);
   const featuredTestimonials = testimonials.slice(0, 3);
@@ -56,6 +57,7 @@ export default function HomePage() {
         ctaText={t('heroCTA')}
         ctaHref="/quote-request"
         backgroundImage="/placeholder-hero.jpg"
+        showFireworks={true}
       />
 
       {/* About Section */}
@@ -96,6 +98,7 @@ export default function HomePage() {
             title={t('servicesTitle')}
             align="center"
           />
+          
           <motion.div
             variants={staggerContainer}
             initial="hidden"
