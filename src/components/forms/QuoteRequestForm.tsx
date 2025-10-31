@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { quoteRequestSchema, type QuoteRequestFormData } from '@/lib/validations';
+import { createQuoteRequestSchema, type QuoteRequestFormData } from '@/lib/validations';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -36,6 +36,9 @@ export function QuoteRequestForm() {
   const tCommon = useTranslations('Common');
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Create localized schema
+  const quoteRequestSchema = useMemo(() => createQuoteRequestSchema((key: string) => t(key)), [t]);
 
   const form = useForm<QuoteRequestFormData>({
     resolver: zodResolver(quoteRequestSchema),
@@ -182,7 +185,7 @@ export function QuoteRequestForm() {
                         <SelectContent>
                           {CITIES.map((city) => (
                             <SelectItem key={city} value={city}>
-                              {city}
+                              {t(`cities.${city}`)}
                             </SelectItem>
                           ))}
                         </SelectContent>

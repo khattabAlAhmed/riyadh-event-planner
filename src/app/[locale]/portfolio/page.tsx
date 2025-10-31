@@ -19,6 +19,10 @@ export default function PortfolioPage() {
     return locale === 'ar' ? item.ar : item.en;
   };
 
+  const getTranslatedType = (type: string) => {
+    return t(`types.${type}` as any) || type;
+  };
+
   const filteredItems = selectedFilter === 'all'
     ? portfolioItems
     : portfolioItems.filter(item => item.type === selectedFilter);
@@ -52,7 +56,7 @@ export default function PortfolioPage() {
               <PortfolioCard
                 key={item.id}
                 title={getLocalizedContent(item.title)}
-                type={item.type}
+                type={getTranslatedType(item.type)}
                 date={item.date}
                 description={getLocalizedContent(item.description)}
                 image={item.image}

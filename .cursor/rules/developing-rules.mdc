@@ -1,0 +1,7 @@
+1- never use && in terminal
+2- use start and end instead of left and right in tailwind classes of any component
+e.g:
+pl > ps, ml > ms, mr > me
+---
+alwaysApply: true
+---

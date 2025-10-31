@@ -69,6 +69,7 @@
         "getStarted": "Get Started",
         "contactUs": "Contact Us",
         "viewAll": "View All",
+        "viewDetails": "View Details",
         "share": "Share",
         "copyLink": "Copy Link",
         "linkCopied": "Link Copied",
@@ -90,7 +91,8 @@
         "delete": "Delete",
         "search": "Search",
         "filter": "Filter",
-        "all": "All"
+        "all": "All",
+        "minRead": "min read"
     },
     "Header": {
         "home": "Home",
@@ -192,21 +194,91 @@
         },
         "exhibitions": {
             "title": "Exhibitions & Conferences",
+            "subtitle": "Professional organization and management of trade exhibitions, conferences, and corporate events in Riyadh",
+            "intro": "We specialize in organizing professional exhibitions, conferences, and corporate events that leave a lasting impression. With extensive experience in managing large-scale events, we provide comprehensive services from initial planning to final execution, ensuring every detail is perfect.",
             "tradeExhibitions": {
                 "title": "Trade Exhibitions",
-                "description": "Planning and execution of trade exhibitions"
+                "description": "We provide complete solutions for trade exhibitions, from selecting the perfect venue to managing exhibitors and ensuring smooth operations throughout the event. Our team handles all aspects of exhibition planning and execution.",
+                "servicesTitle": "Our Exhibition Services",
+                "services": {
+                    "venueSelection": "Venue selection and setup",
+                    "boothDesign": "Booth design and execution",
+                    "exhibitorManagement": "Exhibitor and participant management",
+                    "marketing": "Marketing and promotion services",
+                    "registration": "Registration and attendance management",
+                    "vendorCoordination": "Vendor coordination"
+                }
             },
             "conferences": {
                 "title": "Conferences",
-                "description": "Organizing scientific and professional conferences"
-            }
+                "description": "We organize scientific and professional conferences with meticulous attention to detail. From coordinating speakers to managing sessions and providing technical support, we ensure your conference runs flawlessly.",
+                "servicesTitle": "Our Conference Services",
+                "services": {
+                    "venueBookings": "Venue and hotel bookings",
+                    "materials": "Promotional materials preparation",
+                    "speakers": "Speaker coordination",
+                    "scheduling": "Time and schedule management",
+                    "technology": "Modern technology (screens, sound systems)",
+                    "interpretation": "Simultaneous interpretation",
+                    "hospitality": "Hospitality services"
+                }
+            },
+            "corporateEvents": {
+                "title": "Corporate Events",
+                "description": "We provide comprehensive corporate event planning services tailored to your business needs.",
+                "productLaunch": "Product Launch Events",
+                "productLaunchDesc": "Grand product unveiling ceremonies",
+                "shareholderMeetings": "Shareholder Meetings",
+                "shareholderMeetingsDesc": "Professional corporate meetings",
+                "trainingWorkshops": "Training Workshops",
+                "trainingWorkshopsDesc": "Educational and development programs",
+                "teamBuilding": "Team Building Events",
+                "teamBuildingDesc": "Activities to strengthen team bonds"
+            },
+            "pastProjects": {
+                "title": "Our Recent Projects",
+                "subtitle": "Explore some of our successful exhibitions and conferences"
+            },
+            "ctaTitle": "Ready to Organize Your Next Event?",
+            "ctaSubtitle": "Contact us today for a professional consultation",
+            "ctaButton": "Request a Quote"
         },
         "equipmentRental": {
             "title": "Equipment & Supplies Rental",
-            "description": "Rental of tents, chairs, tables, and audio equipment"
+            "description": "Rental of tents, chairs, tables, and audio equipment",
+            "intro1": "Quality equipment is essential for successful events. We provide a comprehensive range of rental equipment and supplies to meet all your event needs. From elegant European tents to professional audio systems, we have everything required to make your event exceptional.",
+            "intro2": "All our equipment is modern, well-maintained, and available in various styles to match your event theme and budget. Our experienced team handles delivery, setup, and takedown, ensuring a hassle-free experience.",
+            "categoriesTitle": "Our Equipment Categories",
+            "categoriesSubtitle": "Explore our wide range of rental equipment and supplies",
+            "additionalServicesTitle": "Additional Services Included",
+            "deliverySetup": "Delivery & Setup",
+            "deliverySetupDesc": "Professional delivery and installation of all equipment at your venue. Our experienced team ensures everything is set up correctly and safely.",
+            "takedownPickup": "Takedown & Pickup",
+            "takedownPickupDesc": "After your event, we handle complete dismantling and removal of all equipment, leaving your venue clean and tidy.",
+            "support247": "24/7 Support",
+            "support247Desc": "Round-the-clock technical support during your event. If any issues arise, our team is just a phone call away.",
+            "qualityGuarantee": "Quality Guarantee",
+            "qualityGuaranteeDesc": "All equipment is thoroughly inspected and cleaned before delivery. We guarantee the quality and functionality of every item.",
+            "ctaTitle": "Need Equipment for Your Event?",
+            "ctaSubtitle": "Browse our complete equipment catalog and book today"
         },
         "tentRental": {
             "title": "Tent Rental",
+            "subtitle": "Premium European and traditional tents for all occasions",
+            "intro1": "Tents provide the perfect solution for outdoor events, offering protection from weather elements while adding an elegant touch to your celebration. Whether you're planning a wedding, corporate event, or exhibition, our range of European and traditional tents caters to all needs and budgets.",
+            "intro2": "All our tents are constructed with high-quality materials, professionally installed, and can be customized with climate control, lighting, and decoration to create the perfect atmosphere for your event.",
+            "introTitle": "Why Choose Professional Tents?",
+            "europeanTentsTitle": "European Tents Collection",
+            "europeanTentsSubtitle": "Explore our premium selection of European-style tents",
+            "traditionalTentsTitle": "Traditional Tents",
+            "traditionalTentsSubtitle": "Arabic Heritage Tents",
+            "traditionalTentsDesc": "Our traditional tents bring authentic Arabian charm to your events. Perfect for cultural celebrations, heritage festivals, and traditional gatherings.",
+            "pricingTitle": "Tent Rental Pricing Guide",
+            "pricingSubtitle": "Compare our tent options and pricing ranges",
+            "additionalServicesTitle": "Additional Services",
+            "additionalServicesDesc": "Complete tent rental packages include professional services:",
+            "ctaTitle": "Ready to Book Your Perfect Tent?",
+            "ctaSubtitle": "Contact us for a detailed quote tailored to your event",
             "pyramid": {
                 "title": "Pyramid Tents",
                 "description": "Elegant pyramid-shaped design, perfect for luxury parties"
@@ -234,6 +306,21 @@
         },
         "furnitureRental": {
             "title": "Furniture Rental",
+            "subtitle": "Elegant chairs and tables for all types of events",
+            "intro1": "Choosing the right furniture is essential for creating a comfortable and elegant atmosphere at your event. We offer a comprehensive selection of chairs and tables in various styles to match any theme or occasion.",
+            "intro2": "All our furniture is meticulously maintained, professionally cleaned, and available with matching linens and covers to complete your event's aesthetic.",
+            "introTitle": "The Perfect Seating for Your Event",
+            "chairsTitle": "Chair Collection",
+            "chairsSubtitle": "From elegant Chiavari to practical plastic chairs, find the perfect seating",
+            "tablesTitle": "Table Collection",
+            "tablesSubtitle": "Round, rectangular, and cocktail tables in all sizes",
+            "linensTitle": "Table Linens & Chair Covers",
+            "linensSubtitle": "Complete Your Look",
+            "linensDesc": "Add the finishing touches to your event with our selection of high-quality linens and covers:",
+            "packagesTitle": "Package Deals Available",
+            "packagesDesc": "Save money by renting furniture packages! We offer discounted rates for bulk orders and complete event setups.",
+            "ctaTitle": "Need Furniture for Your Event?",
+            "ctaSubtitle": "Contact us for customized quotes and package deals",
             "chairs": {
                 "chiavari": "Chiavari Chairs",
                 "napoleon": "Napoleon Chairs",
@@ -250,6 +337,19 @@
         },
         "audioLighting": {
             "title": "Audio & Lighting Rental",
+            "subtitle": "Professional audio and lighting equipment for unforgettable events",
+            "intro1": "Sound and lighting are crucial elements that can make or break an event. Professional audio ensures every word is heard clearly, while creative lighting sets the mood and enhances the visual appeal of your venue.",
+            "intro2": "We provide state-of-the-art audio and lighting equipment operated by experienced technicians to ensure flawless execution. From intimate gatherings to large-scale concerts, we have the perfect solution for every event.",
+            "introTitle": "The Power of Sound and Light",
+            "audioSystemsTitle": "Audio Systems",
+            "audioSystemsSubtitle": "Crystal-clear sound for every occasion",
+            "lightingSystemsTitle": "Lighting Systems",
+            "lightingSystemsSubtitle": "Transform your venue with professional lighting",
+            "specialEffectsTitle": "Special Effects",
+            "specialEffectsSubtitle": "Add wow factor to your event with stunning special effects",
+            "technicalSupportTitle": "Professional Technical Support",
+            "ctaTitle": "Ready to Enhance Your Event?",
+            "ctaSubtitle": "Contact us for professional audio and lighting solutions",
             "audio": {
                 "title": "Audio Systems",
                 "speakers": "Professional Speakers",
@@ -277,6 +377,27 @@
         "phone": "Phone Number",
         "email": "Email",
         "city": "City",
+        "cities": {
+            "Riyadh": "Riyadh",
+            "Jeddah": "Jeddah",
+            "Dammam": "Dammam",
+            "Khobar": "Khobar",
+            "Mecca": "Mecca",
+            "Medina": "Medina",
+            "Other": "Other"
+        },
+        "errors": {
+            "fullNameMin": "Full name must be at least 2 characters",
+            "phoneMin": "Phone number must be at least 10 digits",
+            "emailInvalid": "Invalid email address",
+            "cityRequired": "Please select a city",
+            "eventTypeRequired": "Please select an event type",
+            "eventDateRequired": "Please select an event date",
+            "eventTimeRequired": "Please select an event time",
+            "attendanceRequired": "Please select expected attendance",
+            "locationMin": "Location must be at least 3 characters",
+            "servicesRequired": "Please select at least one service"
+        },
         "eventType": "Event Type",
         "eventDate": "Event Date",
         "eventTime": "Event Time",
@@ -358,6 +479,15 @@
             "exhibitions": "Exhibitions",
             "conferences": "Conferences",
             "corporate": "Corporate Events"
+        },
+        "types": {
+            "wedding": "Wedding",
+            "birthday": "Birthday",
+            "exhibition": "Exhibition",
+            "conference": "Conference",
+            "corporate": "Corporate Event",
+            "graduation": "Graduation",
+            "familyEvent": "Family Event"
         }
     },
     "About": {

@@ -7,6 +7,7 @@ import { staggerItem } from '@/lib/motion-variants';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Calendar, Clock } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface BlogCardProps {
   title: string;
@@ -27,6 +28,8 @@ export function BlogCard({
   readTime,
   className,
 }: BlogCardProps) {
+  const t = useTranslations('Common');
+
   return (
     <motion.div variants={staggerItem}>
       <Link href={`/blog/${slug}`}>
@@ -51,7 +54,7 @@ export function BlogCard({
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="h-4 w-4" />
-                {readTime} min read
+                {readTime} {t('minRead')}
               </div>
             </div>
           </CardContent>

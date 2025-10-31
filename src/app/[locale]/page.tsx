@@ -16,6 +16,7 @@ import { testimonials } from '@/data/testimonials';
 import { PartyPopper, Building2, Package, Users, Award, Clock, Heart } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import { generateLocalBusinessSchema, generateBreadcrumbSchema, renderJsonLd } from '@/lib/structured-data';
 
 export default function HomePage() {
   const t = useTranslations('HomePage');
@@ -30,8 +31,24 @@ export default function HomePage() {
     return locale === 'ar' ? item.ar : item.en;
   };
 
+  // Generate structured data
+  const localBusinessSchema = generateLocalBusinessSchema(locale);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: locale === 'ar' ? 'الرئيسية' : 'Home', url: '/' }
+  ], locale);
+
   return (
     <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: renderJsonLd(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: renderJsonLd(breadcrumbSchema) }}
+      />
+
       {/* Hero Section */}
       <Hero
         title={t('heroTitle')}

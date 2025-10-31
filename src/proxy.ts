@@ -35,7 +35,7 @@ export default async function middleware(request: NextRequest) {
   }
   
   // Define protected and public routes
-  const protectedRoutes = ['/dashboard'];
+  const protectedRoutes = ['/dashboard', '/admin'];
   const publicRoutes = ['/sign-in', '/sign-up', '/forgot-password', '/reset-password', '/confirm'];
   
   // Check if current path is protected or public (without locale prefix)

@@ -8,6 +8,7 @@ import { ArrowRight } from 'lucide-react';
 import { staggerItem } from '@/lib/motion-variants';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface ServiceCardProps {
   title: string;
@@ -26,6 +27,8 @@ export function ServiceCard({
   image,
   className,
 }: ServiceCardProps) {
+  const t = useTranslations('Common');
+
   return (
     <motion.div variants={staggerItem}>
       <Card className={cn('h-full flex flex-col hover:shadow-lg transition-shadow', className)}>
@@ -47,7 +50,7 @@ export function ServiceCard({
         <CardContent className="mt-auto">
           <Link href={href}>
             <Button variant="outline" className="w-full group">
-              Learn More
+              {t('learnMore')}
               <ArrowRight className="ms-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

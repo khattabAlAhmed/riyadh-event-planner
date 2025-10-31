@@ -1,0 +1,9 @@
+1- arabic and englih locales
+2- dark and light mode
+3- SEO entirly frindly bot locales
+4- mobile responsive
+5- use colors only from @globals.css file
+6- Framer Motion For animations
+---
+alwaysApply: true
+---
