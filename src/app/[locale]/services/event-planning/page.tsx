@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import { staggerContainer } from '@/lib/motion-variants';
 import { Heart, Cake, GraduationCap, Users, Calendar } from 'lucide-react';
 import { FireworksBackground } from '@/components/animate-ui/components/backgrounds/fireworks';
+import { BackgroundLines } from '@/components/ui/background-lines';
 
 export default function EventPlanningPage() {
   const t = useTranslations('Services.eventPlanning');
@@ -16,12 +17,14 @@ export default function EventPlanningPage() {
 
   return (
     <>
+
       <Hero
         title={t('title')}
         subtitle={t('description')}
         ctaText={tCommon('getStarted')}
         ctaHref="/quote-request"
         showFireworks={false}
+        showLines={true}
       />
 
       <div className="container mx-auto px-4 py-12 md:py-16 relative">

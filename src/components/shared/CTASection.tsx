@@ -23,6 +23,7 @@ export function CTASection({
 }: CTASectionProps) {
   return (
     <section className={cn('py-16 md:py-24 bg-muted/50', className)}>
+      
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"

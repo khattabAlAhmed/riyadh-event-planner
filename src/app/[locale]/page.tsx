@@ -18,6 +18,7 @@ import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { generateLocalBusinessSchema, generateBreadcrumbSchema, renderJsonLd } from '@/lib/structured-data';
 import { useTheme } from 'next-themes';
+import { HoleBackground } from '@/components/animate-ui/components/backgrounds/hole';
 
 export default function HomePage() {
   const t = useTranslations('HomePage');
@@ -98,6 +99,7 @@ export default function HomePage() {
             title={t('servicesTitle')}
             align="center"
           />
+
           
           <motion.div
             variants={staggerContainer}
@@ -238,6 +240,7 @@ export default function HomePage() {
 
       {/* Final CTA */}
       <CTASection
+      
         title={t('finalCTATitle')}
         subtitle={t('finalCTASubtitle')}
         ctaText={t('finalCTAButton')}

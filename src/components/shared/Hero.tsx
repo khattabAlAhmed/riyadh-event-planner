@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { FireworksBackground } from '../animate-ui/components/backgrounds/fireworks';
 import { useTheme } from 'next-themes';
+import { StarsBackground } from '../animate-ui/components/backgrounds/stars';
+import { BackgroundLines } from '../ui/background-lines';
 interface HeroProps {
   title: string;
   subtitle: string;
@@ -16,6 +18,8 @@ interface HeroProps {
   backgroundImage?: string;
   className?: string;
   showFireworks?: boolean;
+  showStars?: boolean;
+  showLines?: boolean;
 }
 
 export function Hero({
@@ -26,6 +30,8 @@ export function Hero({
   backgroundImage,
   className,
   showFireworks,
+  showStars,
+  showLines,
 }: HeroProps) {
   const { resolvedTheme: theme } = useTheme();
   return (
@@ -36,6 +42,9 @@ export function Hero({
         className
       )}
     >
+            <BackgroundLines className={`flex  items-center justify-center w-full flex-col px-4`} showlines={showLines} >
+
+      
       {backgroundImage && (
         <div className="absolute inset-0 z-0">
           <Image
@@ -45,14 +54,20 @@ export function Hero({
             className="object-cover opacity-20"
             priority
           />
-          {showFireworks && (
-            <FireworksBackground
-              className="absolute inset-0 flex items-center justify-center rounded-xl"
-              color={theme === 'dark' ? 'yellow' : 'oklch(0.8903 0.1739 171.2690)'}
-              population={1}
-            />
-          )}
         </div>
+      )}
+      {showFireworks && (
+        <FireworksBackground
+          className="absolute inset-0 flex items-center justify-center rounded-xl"
+          color={theme === 'dark' ? 'yellow' : 'oklch(0.8903 0.1739 171.2690)'}
+          population={1}
+        />
+      )}
+      {showStars && (
+        <StarsBackground
+          className="absolute inset-0 flex items-center justify-center rounded-xl"
+          starColor={theme === 'dark' ? '#FFF' : '#000'}
+        />
       )}
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -65,6 +80,7 @@ export function Hero({
             variants={slideUp}
             className="text-4xl md:text-5xl lg:text-6xl font-bold"
           >
+
             {title}
           </motion.h1>
           <motion.p
@@ -84,7 +100,9 @@ export function Hero({
           )}
         </motion.div>
       </div>
+      </BackgroundLines>
     </section>
+
   );
 }
 

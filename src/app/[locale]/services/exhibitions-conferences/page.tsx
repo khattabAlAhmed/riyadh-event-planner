@@ -68,6 +68,8 @@ export default function ExhibitionsConferencesPage() {
         subtitle={t('subtitle')}
         ctaText={tCommon('getStarted')}
         ctaHref="/quote-request"
+        showStars={true}
+        showFireworks={false}
       />
 
       <div className="container mx-auto px-4 py-12 md:py-16">

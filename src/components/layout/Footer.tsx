@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { HexagonBackground } from '../animate-ui/components/backgrounds/hexagon';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -23,9 +24,10 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border bg-muted/50">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="relative border-t border-border bg-muted/50">
+      <HexagonBackground className="absolute inset-0 z-0" />
+      <div className="container relative z-10 mx-auto px-4 py-12 pointer-events-none">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pointer-events-auto">
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">{t('company')}</h3>
@@ -133,7 +135,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-border">
+        <div className="mt-8 pt-8 border-t border-border pointer-events-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. {t('allRightsReserved')}.</p>
             <div className="flex gap-4">
@@ -147,6 +149,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+
     </footer>
   );
 }
