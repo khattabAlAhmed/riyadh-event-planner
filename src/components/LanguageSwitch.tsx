@@ -22,8 +22,8 @@ export default function LanguageSwitch() {
       onClick={toggleLanguage}
       className="cursor-pointer"
     >
-        <GlobeIcon className="w-4 h-4 me-2" />
-      {currentLocale === 'en' ? 'ع' : 'En'}
+        <GlobeIcon className="w-4 h-4" />
+      {/* {currentLocale === 'en' ? 'ع' : 'En'} */}
     </Button>
   );
 }

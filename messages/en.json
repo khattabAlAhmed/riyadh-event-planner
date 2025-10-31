@@ -544,7 +544,9 @@
         "title": "Chat with Us",
         "placeholder": "Type your message...",
         "demoMessage": "Hello! How can I help you? This is a demo chat. Real AI assistant coming soon!",
-        "send": "Send"
+        "send": "Send",
+        "continueOnWhatsApp": "Continue on WhatsApp",
+        "callNow": "Call Now"
     },
     "CookieConsent": {
         "title": "Cookie Consent",

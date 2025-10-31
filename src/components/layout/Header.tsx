@@ -5,11 +5,12 @@ import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Menu } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import LanguageSwitch from '@/components/LanguageSwitch';
 import ModeToggler from '@/components/mode-toggler';
 import { cn } from '@/lib/utils';
+import { Button } from '../animate-ui/components/buttons/button';
+import { LiquidButton } from '../animate-ui/components/buttons/liquid';
 
 export function Header() {
   const t = useTranslations('Header');
@@ -63,9 +64,9 @@ export function Header() {
         {/* Right Side Actions */}
         <div className="flex items-center gap-2">
           <Link href="/quote-request">
-            <Button size="sm" className="hidden md:inline-flex">
+            <LiquidButton size="sm" className="hidden md:inline-flex cursor-pointer ">
               {t('quoteRequest')}
-            </Button>
+            </LiquidButton>
           </Link>
           <LanguageSwitch />
           <ModeToggler />
@@ -73,10 +74,10 @@ export function Header() {
           {/* Mobile Menu Button */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
+              <LiquidButton variant="ghost" size="icon">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">{t('menu')}</span>
-              </Button>
+              </LiquidButton>
             </SheetTrigger>
             <SheetContent side={locale === 'ar' ? 'left' : 'right'} className="w-[300px]">
               <SheetHeader>
