@@ -1,6 +1,6 @@
 import { getQuoteRequestById, updateQuoteStatus } from '@/server/admin';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { StatusBadge } from '@/components/admin/StatusBadge';
+import { StatusBadge, QuoteStatus } from '@/components/admin/StatusBadge';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Link } from '@/i18n/navigation';
@@ -50,7 +50,7 @@ export default async function QuoteDetailPage({
             Submitted on {format(new Date(quote.createdAt), 'MMMM dd, yyyy')}
           </p>
         </div>
-        <StatusBadge status={quote.status} />
+        <StatusBadge status={quote.status as QuoteStatus} />
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">

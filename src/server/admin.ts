@@ -46,8 +46,6 @@ export async function getQuoteRequests(filters: QuoteFilters = {}) {
     offset = 0
   } = filters;
 
-  let query = db.select().from(quoteRequests);
-
   // Build where conditions
   const conditions = [];
   
@@ -66,20 +64,21 @@ export async function getQuoteRequests(filters: QuoteFilters = {}) {
     );
   }
 
-  if (conditions.length > 0) {
-    query = query.where(and(...conditions));
-  }
+  const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
   // Get total count
   const countQuery = await db
     .select({ count: sql<number>`count(*)` })
     .from(quoteRequests)
-    .where(conditions.length > 0 ? and(...conditions) : undefined);
+    .where(whereClause);
 
   const total = Number(countQuery[0]?.count || 0);
 
   // Get paginated results
-  const results = await query
+  const results = await db
+    .select()
+    .from(quoteRequests)
+    .where(whereClause)
     .orderBy(desc(quoteRequests.createdAt))
     .limit(limit)
     .offset(offset);
@@ -162,8 +161,6 @@ export async function getContacts(filters: ContactFilters = {}) {
     offset = 0
   } = filters;
 
-  let query = db.select().from(contactSubmissions);
-
   // Build where conditions
   const conditions = [];
   
@@ -182,20 +179,21 @@ export async function getContacts(filters: ContactFilters = {}) {
     );
   }
 
-  if (conditions.length > 0) {
-    query = query.where(and(...conditions));
-  }
+  const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
   // Get total count
   const countQuery = await db
     .select({ count: sql<number>`count(*)` })
     .from(contactSubmissions)
-    .where(conditions.length > 0 ? and(...conditions) : undefined);
+    .where(whereClause);
 
   const total = Number(countQuery[0]?.count || 0);
 
   // Get paginated results
-  const results = await query
+  const results = await db
+    .select()
+    .from(contactSubmissions)
+    .where(whereClause)
     .orderBy(desc(contactSubmissions.createdAt))
     .limit(limit)
     .offset(offset);

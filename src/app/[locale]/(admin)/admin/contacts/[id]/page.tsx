@@ -1,6 +1,6 @@
 import { getContactSubmissionById, updateContactStatus } from '@/server/admin';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { StatusBadge } from '@/components/admin/StatusBadge';
+import { StatusBadge, ContactStatus } from '@/components/admin/StatusBadge';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Link } from '@/i18n/navigation';
@@ -50,7 +50,7 @@ export default async function ContactDetailPage({
             Submitted on {format(new Date(contact.createdAt), 'MMMM dd, yyyy')}
           </p>
         </div>
-        <StatusBadge status={contact.status} />
+        <StatusBadge status={contact.status as ContactStatus} />
       </div>
 
       {/* Contact Information */}
