@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { fadeIn, slideUp } from '@/lib/motion-variants';
 import { cn } from '@/lib/utils';
+import { LampContainer } from '../ui/lamp';
 
 interface CTASectionProps {
   title: string;
@@ -22,9 +23,14 @@ export function CTASection({
   className,
 }: CTASectionProps) {
   return (
-    <section className={cn('py-16 md:py-24 bg-muted/50', className)}>
-      
-      <div className="container mx-auto px-4">
+    <section className={cn('relative py-16 md:py-24 bg-muted/50 overflow-hidden', className)}>
+
+      <div className=" container mx-auto px-4 ove">
+      <LampContainer>
+        <motion.div>
+          
+        </motion.div>
+        </LampContainer>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -52,6 +58,7 @@ export function CTASection({
             </Link>
           </motion.div>
         </motion.div>
+
       </div>
     </section>
   );
