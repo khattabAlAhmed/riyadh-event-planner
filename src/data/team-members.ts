@@ -31,7 +31,7 @@ export const teamMembers: TeamMember[] = [
       en: 'With over 15 years of experience in event planning, Omar has built Riyadh Event Planner into one of the most trusted event management companies in the region.',
       ar: 'مع أكثر من 15 عاماً من الخبرة في تخطيط الفعاليات، بنى عمر شركة Riyadh Event Planner لتصبح واحدة من أكثر شركات إدارة الفعاليات موثوقية في المنطقة.',
     },
-    image: '/placeholder-team-1.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     email: 'omar@riyadheventplanner.com',
   },
   {
@@ -48,7 +48,7 @@ export const teamMembers: TeamMember[] = [
       en: 'Layla brings artistic vision and creative excellence to every event. Her attention to detail and innovative designs have made countless celebrations unforgettable.',
       ar: 'تجلب ليلى الرؤية الفنية والتميز الإبداعي لكل فعالية. اهتمامها بالتفاصيل وتصاميمها المبتكرة جعلت الاحتفالات لا تعد ولا تحصى لا تُنسى.',
     },
-    image: '/placeholder-team-2.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     email: 'layla@riyadheventplanner.com',
   },
   {
@@ -65,7 +65,7 @@ export const teamMembers: TeamMember[] = [
       en: 'Khalid ensures smooth execution of every event with his exceptional organizational skills and ability to coordinate multiple vendors seamlessly.',
       ar: 'يضمن خالد التنفيذ السلس لكل فعالية بمهاراته التنظيمية الاستثنائية وقدرته على تنسيق العديد من الموردين بسلاسة.',
     },
-    image: '/placeholder-team-3.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     email: 'khalid@riyadheventplanner.com',
   },
   {
@@ -82,7 +82,7 @@ export const teamMembers: TeamMember[] = [
       en: 'Aisha is the first point of contact for our clients, ensuring they feel heard and understood throughout the planning process.',
       ar: 'عائشة هي نقطة الاتصال الأولى لعملائنا، مما يضمن شعورهم بالاستماع والفهم طوال عملية التخطيط.',
     },
-    image: '/placeholder-team-4.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     email: 'aisha@riyadheventplanner.com',
   },
 ];

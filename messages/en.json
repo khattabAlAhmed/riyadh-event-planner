@@ -281,27 +281,203 @@
             "ctaSubtitle": "Contact us for a detailed quote tailored to your event",
             "pyramid": {
                 "title": "Pyramid Tents",
-                "description": "Elegant pyramid-shaped design, perfect for luxury parties"
+                "description": "Elegant pyramid-shaped design, perfect for luxury parties",
+                "specs": {
+                    "structure": "Structure",
+                    "structureValue": "Strong Aluminum",
+                    "coverMaterial": "Cover Material",
+                    "coverMaterialValue": "PVC 850 g/m²",
+                    "height": "Height",
+                    "heightValue": "Up to 6 meters",
+                    "sizeRange": "Size Range",
+                    "sizeRangeValue": "3×3m to 20×20m"
+                },
+                "uses": ["Weddings", "Formal Events", "VIP Receptions"],
+                "features": [
+                    "Fire and water-resistant PVC cover",
+                    "Wind and rain resistant design",
+                    "Interior LED lighting available",
+                    "Air conditioning compatible",
+                    "Wooden floors or carpets",
+                    "Side curtains",
+                    "Luxury interior decorations"
+                ]
             },
             "pagoda": {
                 "title": "Pagoda Tents",
-                "description": "Small conical design, suitable for temporary offices"
+                "description": "Small conical design, suitable for temporary offices",
+                "specs": {
+                    "design": "Design",
+                    "designValue": "Small Conical",
+                    "structure": "Structure",
+                    "structureValue": "Lightweight Aluminum",
+                    "size": "Size",
+                    "sizeValue": "Small to Medium",
+                    "setup": "Setup",
+                    "setupValue": "Quick & Easy"
+                },
+                "uses": ["Temporary Offices", "Registration Points", "Sales Booths"],
+                "features": [
+                    "Portable and easy to transport",
+                    "Quick installation",
+                    "Customizable design",
+                    "Ideal for exhibitions",
+                    "Weather-resistant"
+                ]
             },
             "polygon": {
                 "title": "Polygon Tents",
-                "description": "Multi-sided design, very large spaces"
+                "description": "Multi-sided design, very large spaces",
+                "specs": {
+                    "width": "Width",
+                    "widthValue": "From 40 meters",
+                    "height": "Height",
+                    "heightValue": "Up to 16 meters",
+                    "design": "Design",
+                    "designValue": "Multi-sided",
+                    "interior": "Interior",
+                    "interiorValue": "Column-free"
+                },
+                "uses": ["Major Exhibitions", "International Conferences", "Concerts", "Sports Events"],
+                "features": [
+                    "Extremely large spaces",
+                    "No internal columns",
+                    "Expandable design",
+                    "Professional grade structure",
+                    "Suitable for 1000+ guests"
+                ]
             },
             "dome": {
                 "title": "Dome Tents",
-                "description": "Unique semi-spherical design, modern and luxurious appearance"
+                "description": "Unique semi-spherical design, modern and luxurious appearance",
+                "specs": {
+                    "diameter": "Diameter",
+                    "diameterValue": "6m to 30m",
+                    "design": "Design",
+                    "designValue": "Semi-spherical",
+                    "roofOption": "Roof Option",
+                    "roofOptionValue": "Clear or Standard",
+                    "ventilation": "Ventilation",
+                    "ventilationValue": "Excellent"
+                },
+                "uses": ["Exhibition Halls", "Temporary Restaurants", "Art Events"],
+                "features": [
+                    "Unique modern design",
+                    "Optional transparent roof",
+                    "High wind resistance",
+                    "Natural lighting options",
+                    "Spacious interior"
+                ]
             },
             "arcum": {
                 "title": "Arcum Tents",
-                "description": "Curved flowing design, exceptional elegance"
+                "description": "Curved flowing design, exceptional elegance",
+                "specs": {
+                    "width": "Width",
+                    "widthValue": "8m to 40m",
+                    "interior": "Interior",
+                    "interiorValue": "Column-free",
+                    "design": "Design",
+                    "designValue": "Curved Arches",
+                    "connection": "Connection",
+                    "connectionValue": "Linkable"
+                },
+                "uses": ["Large Weddings", "Trade Exhibitions", "Conferences"],
+                "features": [
+                    "Elegant curved design",
+                    "Open floor plan",
+                    "Linkable sections",
+                    "Exceptional elegance",
+                    "Professional appearance"
+                ]
             },
             "clearSpan": {
                 "title": "Clear Span Tents",
-                "description": "Transparent roof and walls, unique experience"
+                "description": "Transparent roof and walls, unique experience",
+                "specs": {
+                    "material": "Material",
+                    "materialValue": "Clear Plastic",
+                    "uvProtection": "UV Protection",
+                    "uvProtectionValue": "Yes",
+                    "insulation": "Insulation",
+                    "insulationValue": "Thermal",
+                    "view": "View",
+                    "viewValue": "Sky View"
+                },
+                "uses": ["Night Weddings", "Luxury Events", "Fine Dining"],
+                "features": [
+                    "Transparent roof and walls",
+                    "Sky view experience",
+                    "UV protection",
+                    "Temperature controlled",
+                    "Unique ambiance",
+                    "Perfect for stargazing"
+                ]
+            },
+            "traditionalFeatures": {
+                "royalArabian": "Royal Arabian designs",
+                "ornateDecorations": "Ornate decorations",
+                "traditionalSeating": "Traditional seating areas",
+                "culturalAuthenticity": "Cultural authenticity"
+            },
+            "pricing": {
+                "pyramid": {
+                    "type": "Pyramid Tents",
+                    "area": "Small-Medium",
+                    "bestUse": "Parties, Receptions",
+                    "priceRange": "From 100 SAR/day"
+                },
+                "pagoda": {
+                    "type": "Pagoda Tents",
+                    "area": "Small",
+                    "bestUse": "Temporary Offices",
+                    "priceRange": "From 80 SAR/day"
+                },
+                "polygon": {
+                    "type": "Polygon Tents",
+                    "area": "Extra Large",
+                    "bestUse": "Major Events",
+                    "priceRange": "Contact for Quote"
+                },
+                "dome": {
+                    "type": "Dome Tents",
+                    "area": "Medium-Large",
+                    "bestUse": "Art & Exhibitions",
+                    "priceRange": "From 200 SAR/day"
+                },
+                "arcum": {
+                    "type": "Arcum Tents",
+                    "area": "Large",
+                    "bestUse": "Weddings, Conferences",
+                    "priceRange": "From 250 SAR/day"
+                },
+                "clearSpan": {
+                    "type": "Clear Span Tents",
+                    "area": "Medium-Large",
+                    "bestUse": "Luxury Events",
+                    "priceRange": "From 300 SAR/day"
+                }
+            },
+            "additionalServicesList": [
+                "Professional installation and dismantling",
+                "Transportation to your venue",
+                "Air conditioning and heating",
+                "Interior lighting systems",
+                "Wooden or carpeted flooring",
+                "Custom interior decoration",
+                "Side walls and curtains",
+                "Furniture setup inside tents"
+            ],
+            "labels": {
+                "specifications": "Specifications",
+                "bestUses": "Best Uses",
+                "keyFeatures": "Key Features",
+                "type": "Type",
+                "area": "Area",
+                "bestUse": "Best Use",
+                "priceRange": "Price Range",
+                "popular": "Popular",
+                "pricingNote": "Note: Prices are estimates and may vary based on event duration, location, additional services, and customization requirements. Contact us for an accurate quote tailored to your needs."
             }
         },
         "furnitureRental": {

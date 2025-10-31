@@ -169,4 +169,55 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: oklch(0.9816 0.0017 247.8390);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.6726 0.2904 341.4084);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.6726 0.2904 341.4084 / 0.8);
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar-track {
+    background: oklch(0.1649 0.0352 281.8285);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: oklch(0.6726 0.2904 341.4084);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.6726 0.2904 341.4084 / 0.8);
+  }
+
+  /* Firefox Scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.6726 0.2904 341.4084) oklch(0.9816 0.0017 247.8390);
+  }
+
+  .dark * {
+    scrollbar-color: oklch(0.6726 0.2904 341.4084) oklch(0.1649 0.0352 281.8285);
+  }
+
+  /* Text Selection */
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  ::-moz-selection {
+    @apply bg-primary text-primary-foreground;
+  }
 }

@@ -56,6 +56,26 @@ function ThemeTogglerButton({
   ...props
 }: ThemeTogglerButtonProps) {
   const { theme, resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // Return a placeholder button with the same styling to prevent layout shift
+    return (
+      <button
+        data-slot="theme-toggler-button"
+        className={cn(buttonVariants({ variant, size, className }))}
+        disabled
+        {...props}
+      >
+        <div style={{ width: 24, height: 24 }} />
+      </button>
+    );
+  }
 
   return (
     <ThemeTogglerPrimitive

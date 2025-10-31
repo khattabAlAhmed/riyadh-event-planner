@@ -33,7 +33,7 @@ export const testimonials: Testimonial[] = [
       ar: 'خدمة متميزة من البداية للنهاية! جعلوا يوم زفافنا مثالياً تماماً. الاهتمام بالتفاصيل والاحترافية تجاوزت توقعاتنا.',
     },
     rating: 5,
-    image: '/placeholder-avatar-1.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     eventType: 'wedding',
   },
   {
@@ -51,7 +51,7 @@ export const testimonials: Testimonial[] = [
       ar: 'استأجرناهم لمؤتمرنا السنوي ولم نكن أسعد. كان كل شيء منظماً بشكل مثالي، وتولوا جميع الجوانب التقنية بلا عيوب.',
     },
     rating: 5,
-    image: '/placeholder-avatar-2.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     eventType: 'conference',
   },
   {
@@ -69,7 +69,7 @@ export const testimonials: Testimonial[] = [
       ar: 'كانت حفلة عيد ميلاد ابنتي سحرية! كانت الديكورات جميلة، وكان الفريق صبوراً جداً مع الأطفال. أنصح بهم بشدة!',
     },
     rating: 5,
-    image: '/placeholder-avatar-3.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     eventType: 'birthday',
   },
   {
@@ -87,7 +87,7 @@ export const testimonials: Testimonial[] = [
       ar: 'احترافي وموثوق وإبداعي. حولوا معرضنا التجاري إلى تجربة لا تُنسى. كان إعداد الخيمة مثيراً للإعجاب!',
     },
     rating: 5,
-    image: '/placeholder-avatar-4.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     eventType: 'exhibition',
   },
   {
@@ -105,7 +105,7 @@ export const testimonials: Testimonial[] = [
       ar: 'كان حفل التخرج بلا عيوب. من إعداد المسرح إلى نظام الصوت، كان كل شيء مثالياً. شكراً لكم لجعله مميزاً!',
     },
     rating: 5,
-    image: '/placeholder-avatar-5.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     eventType: 'corporate',
   },
   {
@@ -123,7 +123,7 @@ export const testimonials: Testimonial[] = [
       ar: 'خدمة استثنائية! تعاملوا مع كل تفصيل بعناية وجعلوا يومنا الخاص لا يُنسى. كان الفريق متجاوباً واحترافياً طوال الوقت.',
     },
     rating: 5,
-    image: '/placeholder-avatar-6.jpg',
+    image: 'https://static.vecteezy.com/system/resources/previews/063/477/597/non_2x/minimalist-illustration-of-a-faceless-male-avatar-defoult-photo-placeholder-wearing-a-hoodie-on-a-light-gray-background-ideal-for-profile-pictures-and-online-anonymity-themes-vector.jpg',
     eventType: 'wedding',
   },
 ];

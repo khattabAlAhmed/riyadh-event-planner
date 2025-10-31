@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
         <p>مع التخطيط المناسب والفريق الصحيح، يمكن أن يكون حفل زفافك في الرياض حدثاً لا يُنسى حقاً. لا تتردد في التواصل مع منظمي الفعاليات المحترفين للحصول على المساعدة.</p>
       `,
     },
-    image: '/placeholder-wedding.jpg',
+    image: 'https://static.hiamag.com/styles/autox754/public/article/30/11/2021/shutterstock_512157103.jpg',
     date: '2024-01-15',
     readTime: 8,
     category: 'weddings',
@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
         <p>ضع في اعتبارك عدد الضيوف ومساحة المكان وتفضيلاتك الجمالية عند اختيار الخيمة.</p>
       `,
     },
-    image: '/placeholder-tent.jpg',
+    image: 'https://img.waimaoniu.net/1259/1259-202108211357493304.jpg',
     date: '2024-01-10',
     readTime: 6,
     category: 'equipment',
@@ -161,7 +161,7 @@ export const blogPosts: BlogPost[] = [
         <p>ركز على الخلفيات ومراكز الطاولات والإضاءة واللمسات الشخصية التي تحتفل بإنجازات الخريج.</p>
       `,
     },
-    image: '/placeholder-graduation.jpg',
+    image: 'https://m.media-amazon.com/images/I/81TTcvuQ53L._AC_UF1000,1000_QL80_.jpg',
     date: '2024-01-05',
     readTime: 5,
     category: 'planning',
@@ -222,7 +222,7 @@ export const blogPosts: BlogPost[] = [
         <p>بغض النظر عن الثيم الذي تختاره، المفتاح هو إبقاء الأطفال منشغلين وإنشاء ذكريات دائمة.</p>
       `,
     },
-    image: '/placeholder-birthday.jpg',
+    image: 'https://golden4tic.com/blog/wp-content/uploads/2024/06/EDY_1648-1-scaled-1-1024x683.jpg',
     date: '2023-12-28',
     readTime: 7,
     category: 'tips',
@@ -277,7 +277,7 @@ export const blogPosts: BlogPost[] = [
         <p>التخطيط المسبق المناسب هو أساس المعرض التجاري الناجح. ابدأ مبكراً وابق من organized.</p>
       `,
     },
-    image: '/placeholder-exhibition.jpg',
+    image: 'https://www.saudiexports.gov.sa/ar/media/news/PublishingImages/Gulfood00.jpg',
     date: '2023-12-20',
     readTime: 6,
     category: 'planning',

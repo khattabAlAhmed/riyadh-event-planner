@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
@@ -27,6 +28,7 @@ export function PricingTable({
   rows,
   className = ''
 }: PricingTableProps) {
+  const t = useTranslations('Services.tentRental.labels');
   return (
     <motion.div
       variants={fadeIn}
@@ -48,10 +50,10 @@ export function PricingTable({
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b">
-                  <th className="text-start p-4 font-semibold">Type</th>
-                  <th className="text-start p-4 font-semibold">Area</th>
-                  <th className="text-start p-4 font-semibold">Best Use</th>
-                  <th className="text-end p-4 font-semibold">Price Range</th>
+                  <th className="text-start p-4 font-semibold">{t('type')}</th>
+                  <th className="text-start p-4 font-semibold">{t('area')}</th>
+                  <th className="text-start p-4 font-semibold">{t('bestUse')}</th>
+                  <th className="text-end p-4 font-semibold">{t('priceRange')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -67,7 +69,7 @@ export function PricingTable({
                         <span className="font-medium">{row.type}</span>
                         {row.popular && (
                           <Badge variant="default" className="text-xs">
-                            Popular
+                            {t('popular')}
                           </Badge>
                         )}
                       </div>
@@ -94,20 +96,20 @@ export function PricingTable({
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-semibold text-lg">{row.type}</h3>
                     {row.popular && (
-                      <Badge variant="default">Popular</Badge>
+                      <Badge variant="default">{t('popular')}</Badge>
                     )}
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-sm text-muted-foreground">Area:</span>
+                      <span className="text-sm text-muted-foreground">{t('area')}:</span>
                       <span className="text-sm font-medium">{row.area}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-sm text-muted-foreground">Best Use:</span>
+                      <span className="text-sm text-muted-foreground">{t('bestUse')}:</span>
                       <span className="text-sm font-medium">{row.bestUse}</span>
                     </div>
                     <div className="flex justify-between pt-2 border-t">
-                      <span className="text-sm font-medium">Price Range:</span>
+                      <span className="text-sm font-medium">{t('priceRange')}:</span>
                       <span className="font-semibold text-primary">{row.priceRange}</span>
                     </div>
                   </div>
@@ -121,9 +123,7 @@ export function PricingTable({
             <div className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
               <p className="text-sm text-muted-foreground">
-                <strong>Note:</strong> Prices are estimates and may vary based on event duration, 
-                location, additional services, and customization requirements. Contact us for an 
-                accurate quote tailored to your needs.
+                {t('pricingNote')}
               </p>
             </div>
           </div>

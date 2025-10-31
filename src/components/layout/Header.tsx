@@ -83,7 +83,7 @@ export function Header() {
               <SheetHeader>
                 <SheetTitle>{t('menu')}</SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-col gap-4 mt-8">
+              <nav className="flex flex-col gap-4 mt-8 px-8">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}

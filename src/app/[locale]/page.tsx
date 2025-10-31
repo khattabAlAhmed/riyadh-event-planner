@@ -57,7 +57,7 @@ export default function HomePage() {
         subtitle={t('heroSubtitle')}
         ctaText={t('heroCTA')}
         ctaHref="/quote-request"
-        backgroundImage="/placeholder-hero.jpg"
+        backgroundImage="https://drive.google.com/thumbnail?id=15JIZYUgT130BcKJhfABbXGjiizJJTi4E&sz=w1000"
         showFireworks={true}
       />
 
@@ -82,7 +82,7 @@ export default function HomePage() {
               className="relative h-96 rounded-lg overflow-hidden"
             >
               <Image
-                src="/placeholder-about.jpg"
+                src="https://drive.google.com/thumbnail?id=1lnBg3SHdgjLPx_ZxUR7dKpZ1QmRiC5_5&sz=w1000"
                 alt={t('aboutImageAlt')}
                 fill
                 className="object-cover"
@@ -113,21 +113,21 @@ export default function HomePage() {
               description={tServices('eventPlanning.description')}
               href="/services/event-planning"
               icon={<PartyPopper className="h-8 w-8 text-primary" />}
-              image="/placeholder-service-1.jpg"
+              image="https://drive.google.com/thumbnail?id=1DY5fujvlnLqoSBO3PkFzH5dYp3XoCVRp&sz=w1000"
             />
             <ServiceCard
               title={tServices('exhibitions.title')}
               description={tServices('exhibitions.tradeExhibitions.description')}
               href="/services/exhibitions-conferences"
               icon={<Building2 className="h-8 w-8 text-primary" />}
-              image="/placeholder-service-2.jpg"
+              image="https://drive.google.com/thumbnail?id=1DbeFDu6gserY14tTzk0040FocG1XgOD4&sz=w1000"
             />
             <ServiceCard
               title={tServices('equipmentRental.title')}
               description={tServices('equipmentRental.description')}
               href="/services/equipment-rental"
               icon={<Package className="h-8 w-8 text-primary" />}
-              image="/placeholder-service-3.jpg"
+              image="https://drive.google.com/thumbnail?id=15JIZYUgT130BcKJhfABbXGjiizJJTi4E&sz=w1000"
             />
           </motion.div>
         </div>

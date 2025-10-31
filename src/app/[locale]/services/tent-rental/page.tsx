@@ -15,26 +15,23 @@ export default function TentRentalPage() {
   const t = useTranslations('Services.tentRental');
   const tCommon = useTranslations('Common');
 
+  // Helper function to get array translations
+  const getArrayTranslation = (key: string): string[] => {
+    return t.raw(key) as string[];
+  };
+
   const europeanTents = [
     {
       title: t('pyramid.title'),
       description: t('pyramid.description'),
       specs: [
-        { label: 'Structure', value: 'Strong Aluminum' },
-        { label: 'Cover Material', value: 'PVC 850 g/m²' },
-        { label: 'Height', value: 'Up to 6 meters' },
-        { label: 'Size Range', value: '3×3m to 20×20m' }
+        { label: t('pyramid.specs.structure'), value: t('pyramid.specs.structureValue') },
+        { label: t('pyramid.specs.coverMaterial'), value: t('pyramid.specs.coverMaterialValue') },
+        { label: t('pyramid.specs.height'), value: t('pyramid.specs.heightValue') },
+        { label: t('pyramid.specs.sizeRange'), value: t('pyramid.specs.sizeRangeValue') }
       ],
-      uses: ['Weddings', 'Formal Events', 'VIP Receptions'],
-      features: [
-        'Fire and water-resistant PVC cover',
-        'Wind and rain resistant design',
-        'Interior LED lighting available',
-        'Air conditioning compatible',
-        'Wooden floors or carpets',
-        'Side curtains',
-        'Luxury interior decorations'
-      ],
+      uses: getArrayTranslation('pyramid.uses'),
+      features: getArrayTranslation('pyramid.features'), 
       images: [
         '/placeholder-tent.jpg',
         '/placeholder-portfolio-1.jpg',
@@ -46,19 +43,13 @@ export default function TentRentalPage() {
       title: t('pagoda.title'),
       description: t('pagoda.description'),
       specs: [
-        { label: 'Design', value: 'Small Conical' },
-        { label: 'Structure', value: 'Lightweight Aluminum' },
-        { label: 'Size', value: 'Small to Medium' },
-        { label: 'Setup', value: 'Quick & Easy' }
+        { label: t('pagoda.specs.design'), value: t('pagoda.specs.designValue') },
+        { label: t('pagoda.specs.structure'), value: t('pagoda.specs.structureValue') },
+        { label: t('pagoda.specs.size'), value: t('pagoda.specs.sizeValue') },
+        { label: t('pagoda.specs.setup'), value: t('pagoda.specs.setupValue') }
       ],
-      uses: ['Temporary Offices', 'Registration Points', 'Sales Booths'],
-      features: [
-        'Portable and easy to transport',
-        'Quick installation',
-        'Customizable design',
-        'Ideal for exhibitions',
-        'Weather-resistant'
-      ],
+      uses: getArrayTranslation('pagoda.uses'),
+      features: getArrayTranslation('pagoda.features'),
       images: [
         '/placeholder-service-1.jpg',
         '/placeholder-portfolio-4.jpg',
@@ -69,19 +60,13 @@ export default function TentRentalPage() {
       title: t('polygon.title'),
       description: t('polygon.description'),
       specs: [
-        { label: 'Width', value: 'From 40 meters' },
-        { label: 'Height', value: 'Up to 16 meters' },
-        { label: 'Design', value: 'Multi-sided' },
-        { label: 'Interior', value: 'Column-free' }
+        { label: t('polygon.specs.width'), value: t('polygon.specs.widthValue') },
+        { label: t('polygon.specs.height'), value: t('polygon.specs.heightValue') },
+        { label: t('polygon.specs.design'), value: t('polygon.specs.designValue') },
+        { label: t('polygon.specs.interior'), value: t('polygon.specs.interiorValue') }
       ],
-      uses: ['Major Exhibitions', 'International Conferences', 'Concerts', 'Sports Events'],
-      features: [
-        'Extremely large spaces',
-        'No internal columns',
-        'Expandable design',
-        'Professional grade structure',
-        'Suitable for 1000+ guests'
-      ],
+      uses: getArrayTranslation('polygon.uses'),
+      features: getArrayTranslation('polygon.features'),
       images: [
         '/placeholder-exhibition.jpg',
         '/placeholder-portfolio-6.jpg',
@@ -93,19 +78,13 @@ export default function TentRentalPage() {
       title: t('dome.title'),
       description: t('dome.description'),
       specs: [
-        { label: 'Diameter', value: '6m to 30m' },
-        { label: 'Design', value: 'Semi-spherical' },
-        { label: 'Roof Option', value: 'Clear or Standard' },
-        { label: 'Ventilation', value: 'Excellent' }
+        { label: t('dome.specs.diameter'), value: t('dome.specs.diameterValue') },
+        { label: t('dome.specs.design'), value: t('dome.specs.designValue') },
+        { label: t('dome.specs.roofOption'), value: t('dome.specs.roofOptionValue') },
+        { label: t('dome.specs.ventilation'), value: t('dome.specs.ventilationValue') }
       ],
-      uses: ['Exhibition Halls', 'Temporary Restaurants', 'Art Events'],
-      features: [
-        'Unique modern design',
-        'Optional transparent roof',
-        'High wind resistance',
-        'Natural lighting options',
-        'Spacious interior'
-      ],
+      uses: getArrayTranslation('dome.uses'),
+      features: getArrayTranslation('dome.features'),
       images: [
         '/placeholder-service-2.jpg',
         '/placeholder-portfolio-9.jpg',
@@ -116,19 +95,13 @@ export default function TentRentalPage() {
       title: t('arcum.title'),
       description: t('arcum.description'),
       specs: [
-        { label: 'Width', value: '8m to 40m' },
-        { label: 'Interior', value: 'Column-free' },
-        { label: 'Design', value: 'Curved Arches' },
-        { label: 'Connection', value: 'Linkable' }
+        { label: t('arcum.specs.width'), value: t('arcum.specs.widthValue') },
+        { label: t('arcum.specs.interior'), value: t('arcum.specs.interiorValue') },
+        { label: t('arcum.specs.design'), value: t('arcum.specs.designValue') },
+        { label: t('arcum.specs.connection'), value: t('arcum.specs.connectionValue') }
       ],
-      uses: ['Large Weddings', 'Trade Exhibitions', 'Conferences'],
-      features: [
-        'Elegant curved design',
-        'Open floor plan',
-        'Linkable sections',
-        'Exceptional elegance',
-        'Professional appearance'
-      ],
+      uses: getArrayTranslation('arcum.uses'),
+      features: getArrayTranslation('arcum.features'),
       images: [
         '/placeholder-service-3.jpg',
         '/placeholder-portfolio-11.jpg',
@@ -139,20 +112,13 @@ export default function TentRentalPage() {
       title: t('clearSpan.title'),
       description: t('clearSpan.description'),
       specs: [
-        { label: 'Material', value: 'Clear Plastic' },
-        { label: 'UV Protection', value: 'Yes' },
-        { label: 'Insulation', value: 'Thermal' },
-        { label: 'View', value: 'Sky View' }
+        { label: t('clearSpan.specs.material'), value: t('clearSpan.specs.materialValue') },
+        { label: t('clearSpan.specs.uvProtection'), value: t('clearSpan.specs.uvProtectionValue') },
+        { label: t('clearSpan.specs.insulation'), value: t('clearSpan.specs.insulationValue') },
+        { label: t('clearSpan.specs.view'), value: t('clearSpan.specs.viewValue') }
       ],
-      uses: ['Night Weddings', 'Luxury Events', 'Fine Dining'],
-      features: [
-        'Transparent roof and walls',
-        'Sky view experience',
-        'UV protection',
-        'Temperature controlled',
-        'Unique ambiance',
-        'Perfect for stargazing'
-      ],
+      uses: getArrayTranslation('clearSpan.uses'),
+      features: getArrayTranslation('clearSpan.features'),
       images: [
         '/placeholder-wedding.jpg',
         '/placeholder-portfolio-1-1.jpg',
@@ -164,55 +130,46 @@ export default function TentRentalPage() {
 
   const pricingData: PricingRow[] = [
     {
-      type: 'Pyramid Tents',
-      area: 'Small-Medium',
-      bestUse: 'Parties, Receptions',
-      priceRange: 'From 100 SAR/day',
+      type: t('pricing.pyramid.type'),
+      area: t('pricing.pyramid.area'),
+      bestUse: t('pricing.pyramid.bestUse'),
+      priceRange: t('pricing.pyramid.priceRange'),
       popular: true
     },
     {
-      type: 'Pagoda Tents',
-      area: 'Small',
-      bestUse: 'Temporary Offices',
-      priceRange: 'From 80 SAR/day'
+      type: t('pricing.pagoda.type'),
+      area: t('pricing.pagoda.area'),
+      bestUse: t('pricing.pagoda.bestUse'),
+      priceRange: t('pricing.pagoda.priceRange')
     },
     {
-      type: 'Polygon Tents',
-      area: 'Extra Large',
-      bestUse: 'Major Events',
-      priceRange: 'Contact for Quote'
+      type: t('pricing.polygon.type'),
+      area: t('pricing.polygon.area'),
+      bestUse: t('pricing.polygon.bestUse'),
+      priceRange: t('pricing.polygon.priceRange')
     },
     {
-      type: 'Dome Tents',
-      area: 'Medium-Large',
-      bestUse: 'Art & Exhibitions',
-      priceRange: 'From 200 SAR/day'
+      type: t('pricing.dome.type'),
+      area: t('pricing.dome.area'),
+      bestUse: t('pricing.dome.bestUse'),
+      priceRange: t('pricing.dome.priceRange')
     },
     {
-      type: 'Arcum Tents',
-      area: 'Large',
-      bestUse: 'Weddings, Conferences',
-      priceRange: 'From 250 SAR/day',
+      type: t('pricing.arcum.type'),
+      area: t('pricing.arcum.area'),
+      bestUse: t('pricing.arcum.bestUse'),
+      priceRange: t('pricing.arcum.priceRange'),
       popular: true
     },
     {
-      type: 'Clear Span Tents',
-      area: 'Medium-Large',
-      bestUse: 'Luxury Events',
-      priceRange: 'From 300 SAR/day'
+      type: t('pricing.clearSpan.type'),
+      area: t('pricing.clearSpan.area'),
+      bestUse: t('pricing.clearSpan.bestUse'),
+      priceRange: t('pricing.clearSpan.priceRange')
     }
   ];
 
-  const additionalServices = [
-    'Professional installation and dismantling',
-    'Transportation to your venue',
-    'Air conditioning and heating',
-    'Interior lighting systems',
-    'Wooden or carpeted flooring',
-    'Custom interior decoration',
-    'Side walls and curtains',
-    'Furniture setup inside tents'
-  ];
+  const additionalServices = getArrayTranslation('additionalServicesList');
 
   return (
     <>
@@ -284,19 +241,19 @@ export default function TentRentalPage() {
                 <ul className="grid md:grid-cols-2 gap-3">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                    <span>Royal Arabian designs</span>
+                    <span>{t('traditionalFeatures.royalArabian')}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                    <span>Ornate decorations</span>
+                    <span>{t('traditionalFeatures.ornateDecorations')}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                    <span>Traditional seating areas</span>
+                    <span>{t('traditionalFeatures.traditionalSeating')}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                    <span>Cultural authenticity</span>
+                    <span>{t('traditionalFeatures.culturalAuthenticity')}</span>
                   </li>
                 </ul>
               </CardContent>

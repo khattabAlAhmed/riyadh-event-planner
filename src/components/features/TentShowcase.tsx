@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -33,6 +34,7 @@ export function TentShowcase({
   images,
   className = ''
 }: TentShowcaseProps) {
+  const t = useTranslations('Services.tentRental.labels');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -147,7 +149,7 @@ export function TentShowcase({
             <div className="space-y-6">
               {/* Specifications */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">Specifications</h3>
+                <h3 className="text-lg font-semibold mb-3">{t('specifications')}</h3>
                 <div className="grid grid-cols-2 gap-3">
                   {specs.map((spec, index) => (
                     <div key={index} className="p-3 bg-muted rounded-lg">
@@ -160,7 +162,7 @@ export function TentShowcase({
 
               {/* Uses */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">Best Uses</h3>
+                <h3 className="text-lg font-semibold mb-3">{t('bestUses')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {uses.map((use, index) => (
                     <Badge key={index} variant="secondary">
@@ -172,7 +174,7 @@ export function TentShowcase({
 
               {/* Features */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">Key Features</h3>
+                <h3 className="text-lg font-semibold mb-3">{t('keyFeatures')}</h3>
                 <ul className="space-y-2">
                   {features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
