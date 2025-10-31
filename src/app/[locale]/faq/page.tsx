@@ -1,96 +1,47 @@
-'use client';
+import type { Metadata } from 'next';
+import { generatePageMetadata, generateKeywords } from '@/lib/metadata';
+import FAQContent from './Content';
 
-import { useTranslations, useLocale } from 'next-intl';
-import { SectionHeading } from '@/components/shared/SectionHeading';
-import { ShareButtons } from '@/components/shared/ShareButtons';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { faqItems } from '@/data/faq-items';
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
-export default function FAQPage() {
-  const t = useTranslations('FAQ');
-  const locale = useLocale();
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
 
-  const getLocalizedContent = (item: { en: string; ar: string }) => {
-    return locale === 'ar' ? item.ar : item.en;
-  };
+  const title = locale === 'ar' 
+    ? 'الأسئلة الشائعة | شركة تنظيم فعاليات الرياض'
+    : 'Frequently Asked Questions | Riyadh Event Planner';
+  
+  const description = locale === 'ar'
+    ? 'إجابات على الأسئلة الشائعة حول خدمات تنظيم الحفلات والمعارض والمؤتمرات وتأجير المعدات في الرياض. تعرف على الأسعار والحجز والخدمات.'
+    : 'Answers to frequently asked questions about event planning, exhibitions, conferences, and equipment rental services in Riyadh. Learn about pricing, booking, and services.';
 
-  const categorizedFAQs = {
-    services: faqItems.filter(item => item.category === 'services'),
-    pricing: faqItems.filter(item => item.category === 'pricing'),
-    booking: faqItems.filter(item => item.category === 'booking'),
-    equipment: faqItems.filter(item => item.category === 'equipment'),
-  };
+  const keywords = locale === 'ar'
+    ? generateKeywords(
+        'الأسئلة الشائعة',
+        'أسئلة عن الخدمات',
+        'أسئلة عن الأسعار',
+        'أسئلة عن الحجز',
+        'أسئلة عن المعدات'
+      )
+    : generateKeywords(
+        'FAQ',
+        'Frequently asked questions',
+        'Event planning FAQ',
+        'Rental FAQ',
+        'Booking questions'
+      );
 
-  return (
-    <div className="container mx-auto px-4 py-12 md:py-16">
-      <SectionHeading
-        title={t('title')}
-        align="center"
-      />
-
-      <div className="max-w-4xl mx-auto mt-12 space-y-8">
-        {/* Services */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">{t('services.title')}</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {categorizedFAQs.services.map((item) => (
-              <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger>{getLocalizedContent(item.question)}</AccordionTrigger>
-                <AccordionContent>{getLocalizedContent(item.answer)}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        {/* Pricing */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">{t('pricing.title')}</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {categorizedFAQs.pricing.map((item) => (
-              <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger>{getLocalizedContent(item.question)}</AccordionTrigger>
-                <AccordionContent>{getLocalizedContent(item.answer)}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        {/* Booking */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">{t('booking.title')}</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {categorizedFAQs.booking.map((item) => (
-              <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger>{getLocalizedContent(item.question)}</AccordionTrigger>
-                <AccordionContent>{getLocalizedContent(item.answer)}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        {/* Equipment */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">{t('equipment.title')}</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {categorizedFAQs.equipment.map((item) => (
-              <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger>{getLocalizedContent(item.question)}</AccordionTrigger>
-                <AccordionContent>{getLocalizedContent(item.answer)}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </div>
-
-      <div className="mt-12 flex justify-center">
-        <ShareButtons />
-      </div>
-    </div>
-  );
+  return generatePageMetadata({
+    title,
+    description,
+    keywords,
+    path: '/faq',
+    locale,
+  }, locale);
 }
 
+export default function FAQPage() {
+  return <FAQContent />;
+}

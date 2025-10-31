@@ -1,61 +1,47 @@
-'use client';
+import type { Metadata } from 'next';
+import { generatePageMetadata, generateKeywords } from '@/lib/metadata';
+import ContactContent from './Content';
 
-import { useTranslations } from 'next-intl';
-import { SectionHeading } from '@/components/shared/SectionHeading';
-import { ContactForm } from '@/components/forms/ContactForm';
-import { ContactInfo } from '@/components/shared/ContactInfo';
-import { ShareButtons } from '@/components/shared/ShareButtons';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
-export default function ContactPage() {
-  const t = useTranslations('Contact');
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
 
-  return (
-    <div className="container mx-auto px-4 py-12 md:py-16">
-      <SectionHeading
-        title={t('title')}
-        subtitle={t('subtitle')}
-        align="center"
-      />
+  const title = locale === 'ar' 
+    ? 'اتصل بنا | شركة تنظيم فعاليات الرياض'
+    : 'Contact Us | Riyadh Event Planner';
+  
+  const description = locale === 'ar'
+    ? 'تواصل معنا للحصول على استشارة مجانية حول خدمات تنظيم الحفلات والمعارض والمؤتمرات في الرياض. متاحون من السبت للخميس من 9ص إلى 6م.'
+    : 'Contact us for a free consultation on event planning, exhibitions, and conference services in Riyadh. Available Saturday-Thursday from 9AM to 6PM.';
 
-      <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mt-12">
-        {/* Contact Information */}
-        <Card>
-          <CardHeader>
-            <CardTitle>{t('contactInfo')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ContactInfo />
-          </CardContent>
-        </Card>
+  const keywords = locale === 'ar'
+    ? generateKeywords(
+        'اتصل بنا',
+        'معلومات التواصل',
+        'شركة تنظيم فعاليات الرياض',
+        'تواصل معنا',
+        'استشارة مجانية'
+      )
+    : generateKeywords(
+        'Contact us',
+        'Contact information',
+        'Riyadh event planner contact',
+        'Get in touch',
+        'Free consultation'
+      );
 
-        {/* Contact Form */}
-        <Card>
-          <CardHeader>
-            <CardTitle>{t('formTitle')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ContactForm />
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Map Placeholder */}
-      <div className="mt-12">
-        <Card>
-          <CardContent className="p-0">
-            <div className="relative h-96 w-full bg-muted rounded-lg flex items-center justify-center">
-              <p className="text-muted-foreground">{t('mapPlaceholder')}</p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Share Buttons */}
-      <div className="mt-8 flex justify-center">
-        <ShareButtons />
-      </div>
-    </div>
-  );
+  return generatePageMetadata({
+    title,
+    description,
+    keywords,
+    path: '/contact',
+    locale,
+  }, locale);
 }
 
+export default function ContactPage() {
+  return <ContactContent />;
+}

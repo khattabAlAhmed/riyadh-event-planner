@@ -103,7 +103,15 @@
         "contact": "Contact",
         "quoteRequest": "Get Quote",
         "menu": "Menu",
-        "logo": "Riyadh Event Planner"
+        "logo": "Riyadh Event Planner",
+        "servicesMenu": {
+            "eventPlanning": "Event Planning",
+            "exhibitions": "Exhibitions & Conferences",
+            "equipmentRental": "Equipment Rental",
+            "tentRental": "Tent Rental",
+            "furnitureRental": "Furniture Rental",
+            "audioLighting": "Audio & Lighting"
+        }
     },
     "Footer": {
         "company": "Company",

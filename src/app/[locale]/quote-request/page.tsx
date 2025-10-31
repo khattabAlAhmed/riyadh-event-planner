@@ -1,46 +1,47 @@
-'use client';
+import type { Metadata } from 'next';
+import { generatePageMetadata, generateKeywords } from '@/lib/metadata';
+import QuoteRequestContent from './Content';
 
-import { useTranslations } from 'next-intl';
-import { SectionHeading } from '@/components/shared/SectionHeading';
-import { QuoteRequestForm } from '@/components/forms/QuoteRequestForm';
-import { ContactInfo } from '@/components/shared/ContactInfo';
-import { ShareButtons } from '@/components/shared/ShareButtons';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
-export default function QuoteRequestPage() {
-  const t = useTranslations('QuoteRequest');
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
 
-  return (
-    <div className="container mx-auto px-4 py-12 md:py-16">
-      <SectionHeading
-        title={t('title')}
-        subtitle={t('subtitle')}
-        align="center"
-      />
+  const title = locale === 'ar' 
+    ? 'احصل على عرض سعر | طلب عرض سعر مجاني'
+    : 'Get a Quote | Free Quote Request';
+  
+  const description = locale === 'ar'
+    ? 'احصل على عرض سعر مخصص لمناسبتك. املأ النموذج وسنتواصل معك خلال 24 ساعة. خدمات تنظيم الحفلات والمعارض والمؤتمرات في الرياض.'
+    : 'Get a custom quote for your event. Fill out the form and we will contact you within 24 hours. Event planning, exhibitions, and conference services in Riyadh.';
 
-      <div className="max-w-4xl mx-auto mt-8">
-        <p className="text-center text-muted-foreground mb-8">
-          {t('formIntro')}
-        </p>
+  const keywords = locale === 'ar'
+    ? generateKeywords(
+        'طلب عرض سعر',
+        'عرض سعر مجاني',
+        'احصل على عرض سعر',
+        'تقدير تكلفة الحفل',
+        'عرض سعر معرض'
+      )
+    : generateKeywords(
+        'Get a quote',
+        'Free quote',
+        'Quote request',
+        'Event cost estimate',
+        'Event planning quote'
+      );
 
-        <QuoteRequestForm />
-
-        {/* Alternative Contact Info */}
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle>{t('contactInfo')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ContactInfo />
-          </CardContent>
-        </Card>
-
-        {/* Share Buttons */}
-        <div className="mt-8 flex justify-center">
-          <ShareButtons />
-        </div>
-      </div>
-    </div>
-  );
+  return generatePageMetadata({
+    title,
+    description,
+    keywords,
+    path: '/quote-request',
+    locale,
+  }, locale);
 }
 
+export default function QuoteRequestPage() {
+  return <QuoteRequestContent />;
+}

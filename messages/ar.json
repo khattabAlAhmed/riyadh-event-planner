@@ -104,7 +104,15 @@
         "contact": "اتصل بنا",
         "quoteRequest": "احصل على عرض سعر",
         "menu": "القائمة",
-        "logo": "تنظيم فعاليات الرياض"
+        "logo": "تنظيم فعاليات الرياض",
+        "servicesMenu": {
+            "eventPlanning": "تنظيم الحفلات",
+            "exhibitions": "المعارض والمؤتمرات",
+            "equipmentRental": "تأجير المعدات",
+            "tentRental": "تأجير الخيام",
+            "furnitureRental": "تأجير الكراسي والطاولات",
+            "audioLighting": "المعدات الصوتية والإضاءة"
+        }
     },
     "Footer": {
         "company": "الشركة",

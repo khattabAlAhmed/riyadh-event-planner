@@ -5,9 +5,57 @@ import { blogPosts } from '@/data/blog-posts';
 import { formatDate } from '@/lib/format';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+import { generatePageMetadata, generateKeywords } from '@/lib/metadata';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const locale = await getLocale();
+  const post = blogPosts.find(p => p.slug === slug);
+
+  if (!post) {
+    return generatePageMetadata({
+      title: 'Blog Post',
+      description: 'Blog post',
+      path: `/blog/${slug}`,
+      locale,
+    }, locale);
+  }
+
+  const getLocalizedContent = (item: { en: string; ar: string }) => {
+    return locale === 'ar' ? item.ar : item.en;
+  };
+
+  const title = getLocalizedContent(post.title);
+  const description = getLocalizedContent(post.excerpt);
+  const image = post.image;
+
+  const keywords = locale === 'ar'
+    ? generateKeywords(
+        'مقالات تنظيم الحفلات',
+        'نصائح تنظيم الحفلات',
+        getLocalizedContent(post.title),
+        'تنظيم فعاليات الرياض'
+      )
+    : generateKeywords(
+        'Event planning articles',
+        'Event planning tips',
+        getLocalizedContent(post.title),
+        'Riyadh event planning'
+      );
+
+  return generatePageMetadata({
+    title,
+    description,
+    keywords,
+    path: `/blog/${slug}`,
+    image,
+    locale,
+  }, locale);
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
