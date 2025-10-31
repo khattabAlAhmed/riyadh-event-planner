@@ -66,5 +66,324 @@
         "FAILED_TO_UNLINK_LAST_ACCOUNT": "Failed to unlink last account",
         "ACCOUNT_NOT_FOUND": "Account not found",
         "USER_ALREADY_HAS_PASSWORD": "User already has password",
-        "USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "User already exists. Use another email."    }
+        "USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "User already exists. Use another email."
+    },
+    "Common": {
+        "readMore": "Read More",
+        "learnMore": "Learn More",
+        "getStarted": "Get Started",
+        "contactUs": "Contact Us",
+        "viewAll": "View All",
+        "share": "Share",
+        "copyLink": "Copy Link",
+        "linkCopied": "Link Copied",
+        "phone": "Phone",
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "address": "Address",
+        "workingHours": "Working Hours",
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success",
+        "close": "Close",
+        "next": "Next",
+        "previous": "Previous",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "save": "Save",
+        "edit": "Edit",
+        "delete": "Delete",
+        "search": "Search",
+        "filter": "Filter",
+        "all": "All"
+    },
+    "Header": {
+        "home": "Home",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "blog": "Blog",
+        "about": "About",
+        "contact": "Contact",
+        "quoteRequest": "Get Quote",
+        "menu": "Menu"
+    },
+    "Footer": {
+        "company": "Company",
+        "services": "Services",
+        "quickLinks": "Quick Links",
+        "contact": "Contact",
+        "followUs": "Follow Us",
+        "allRightsReserved": "All rights reserved",
+        "eventPlanning": "Event Planning",
+        "exhibitions": "Exhibitions & Conferences",
+        "equipmentRental": "Equipment Rental",
+        "aboutUs": "About Us",
+        "ourStory": "Our Story",
+        "team": "Team",
+        "testimonials": "Testimonials",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service"
+    },
+    "HomePage": {
+        "heroTitle": "Your Perfect Partner for Event Planning in Riyadh",
+        "heroSubtitle": "We turn your dreams into reality with comprehensive professional event planning services",
+        "heroCTA": "Get Free Quote",
+        "aboutTitle": "Who We Are?",
+        "aboutDescription": "We have been providing event planning, exhibitions, and conference services in Riyadh for [X years of experience]. Our professional team of coordinators and designers has a proven track record of successful projects. We are committed to quality and creativity.",
+        "servicesTitle": "Our Main Services",
+        "whyChooseUsTitle": "Why Choose Us?",
+        "whyChooseUsSubtitle": "Experience excellence in every event",
+        "portfolioTitle": "Our Portfolio",
+        "portfolioSubtitle": "Showcasing our successful projects",
+        "testimonialsTitle": "What Our Clients Say",
+        "testimonialsSubtitle": "Trusted by hundreds of satisfied customers",
+        "finalCTATitle": "Ready to Start Your Project?",
+        "finalCTASubtitle": "Get a free consultation today",
+        "finalCTAButton": "Get Free Consultation"
+    },
+    "Services": {
+        "eventPlanning": {
+            "title": "Event Planning",
+            "description": "Wedding parties, birthdays, graduations, and all special occasions",
+            "weddings": {
+                "title": "Wedding Parties",
+                "description": "Complete coordination from start to finish",
+                "includes": "Includes: Hall selection, decoration design, lighting and sound coordination, photography and video, food menu coordination"
+            },
+            "birthdays": {
+                "title": "Birthdays",
+                "description": "Organizing birthday parties for children and adults"
+            },
+            "graduations": {
+                "title": "Graduation Parties",
+                "description": "Organizing graduation parties for universities and schools"
+            },
+            "howWeWork": {
+                "title": "How We Work",
+                "step1": "Initial Consultation",
+                "step2": "Planning",
+                "step3": "Design",
+                "step4": "Execution",
+                "step5": "Follow-up"
+            }
+        },
+        "exhibitions": {
+            "title": "Exhibitions & Conferences",
+            "tradeExhibitions": {
+                "title": "Trade Exhibitions",
+                "description": "Planning and execution of trade exhibitions"
+            },
+            "conferences": {
+                "title": "Conferences",
+                "description": "Organizing scientific and professional conferences"
+            }
+        },
+        "equipmentRental": {
+            "title": "Equipment & Supplies Rental",
+            "description": "Rental of tents, chairs, tables, and audio equipment"
+        },
+        "tentRental": {
+            "title": "Tent Rental",
+            "pyramid": {
+                "title": "Pyramid Tents",
+                "description": "Elegant pyramid-shaped design, perfect for luxury parties"
+            },
+            "pagoda": {
+                "title": "Pagoda Tents",
+                "description": "Small conical design, suitable for temporary offices"
+            },
+            "polygon": {
+                "title": "Polygon Tents",
+                "description": "Multi-sided design, very large spaces"
+            },
+            "dome": {
+                "title": "Dome Tents",
+                "description": "Unique semi-spherical design, modern and luxurious appearance"
+            },
+            "arcum": {
+                "title": "Arcum Tents",
+                "description": "Curved flowing design, exceptional elegance"
+            },
+            "clearSpan": {
+                "title": "Clear Span Tents",
+                "description": "Transparent roof and walls, unique experience"
+            }
+        },
+        "furnitureRental": {
+            "title": "Furniture Rental",
+            "chairs": {
+                "chiavari": "Chiavari Chairs",
+                "napoleon": "Napoleon Chairs",
+                "plastic": "Plastic Chairs",
+                "transparent": "Transparent Chairs",
+                "garden": "Garden Chairs"
+            },
+            "tables": {
+                "round": "Round Tables",
+                "rectangular": "Rectangular Tables",
+                "cocktail": "Cocktail Tables",
+                "buffet": "Buffet Tables"
+            }
+        },
+        "audioLighting": {
+            "title": "Audio & Lighting Rental",
+            "audio": {
+                "title": "Audio Systems",
+                "speakers": "Professional Speakers",
+                "microphones": "Microphone Systems",
+                "dj": "DJ Services"
+            },
+            "lighting": {
+                "title": "Lighting Systems",
+                "led": "LED Lighting",
+                "stage": "Stage Lighting",
+                "decorative": "Decorative Lighting"
+            }
+        }
+    },
+    "QuoteRequest": {
+        "title": "Get a Custom Quote for Your Event",
+        "subtitle": "We're here to help you plan your perfect event",
+        "formIntro": "Fill out the form below and we'll contact you within 24 hours",
+        "contactInfo": "You can also contact us directly:",
+        "step1": "Contact Information",
+        "step2": "Event Details",
+        "step3": "Services Needed",
+        "step4": "Budget & Notes",
+        "fullName": "Full Name",
+        "phone": "Phone Number",
+        "email": "Email",
+        "city": "City",
+        "eventType": "Event Type",
+        "eventDate": "Event Date",
+        "eventTime": "Event Time",
+        "attendance": "Expected Attendance",
+        "location": "Event Location",
+        "morning": "Morning (8AM-12PM)",
+        "afternoon": "Afternoon (12PM-4PM)",
+        "evening": "Evening (4PM-8PM)",
+        "night": "Night (8PM-12AM)",
+        "under50": "Less than 50",
+        "50to100": "50-100",
+        "100to200": "100-200",
+        "200to500": "200-500",
+        "500to1000": "500-1000",
+        "over1000": "More than 1000",
+        "wedding": "Wedding",
+        "birthday": "Birthday",
+        "graduation": "Graduation",
+        "exhibition": "Trade Exhibition",
+        "conference": "Conference",
+        "productLaunch": "Product Launch",
+        "familyEvent": "Family Event",
+        "seasonal": "Seasonal Event",
+        "corporate": "Corporate Event",
+        "other": "Other",
+        "fullPlanning": "Full Event Planning",
+        "tentRental": "Tent Rental",
+        "chairRental": "Chair Rental",
+        "tableRental": "Table Rental",
+        "decoration": "Decoration & Coordination",
+        "audioEquipment": "Audio Equipment",
+        "lighting": "Lighting",
+        "coolingHeating": "Cooling & Heating",
+        "additionalServices": "Additional Services",
+        "budget": "Estimated Budget",
+        "additionalNotes": "Additional Notes or Special Requests",
+        "notesPlaceholder": "Share any additional details or special ideas for your event",
+        "success": "Thank you! Your request has been received and we'll contact you soon.",
+        "error": "An error occurred. Please try again."
+    },
+    "Contact": {
+        "title": "Contact Us",
+        "subtitle": "We'd love to hear from you",
+        "contactInfo": "Contact Information",
+        "phoneLabel": "Phone",
+        "whatsappLabel": "WhatsApp",
+        "emailLabel": "Email",
+        "addressLabel": "Address",
+        "hoursLabel": "Working Hours",
+        "hoursValue": "Saturday-Thursday, 9AM-6PM",
+        "formTitle": "Quick Contact Form",
+        "name": "Name",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send",
+        "success": "Message sent successfully! We'll get back to you soon.",
+        "error": "Failed to send message. Please try again."
+    },
+    "Portfolio": {
+        "title": "Our Previous Projects",
+        "subtitle": "We're proud of our track record of successful projects",
+        "viewProject": "View Project",
+        "filters": {
+            "all": "All",
+            "weddings": "Weddings",
+            "birthdays": "Birthdays",
+            "exhibitions": "Exhibitions",
+            "conferences": "Conferences",
+            "corporate": "Corporate Events"
+        }
+    },
+    "About": {
+        "title": "About Us",
+        "ourStory": "Our Story",
+        "vision": "Vision",
+        "mission": "Mission",
+        "values": "Values",
+        "team": "Our Team",
+        "stats": {
+            "projects": "500+ Successful Projects",
+            "clients": "1000+ Satisfied Clients",
+            "experience": "10 Years of Experience"
+        },
+        "certifications": "Certifications & Memberships"
+    },
+    "FAQ": {
+        "title": "Frequently Asked Questions",
+        "services": {
+            "title": "About Services",
+            "q1": "What services do you offer?",
+            "q2": "Do you cover areas outside Riyadh?",
+            "q3": "How long does it take to organize a wedding?"
+        },
+        "pricing": {
+            "title": "About Pricing",
+            "q1": "How are prices calculated?",
+            "q2": "Are there special offers and packages?",
+            "q3": "What payment methods are available?"
+        },
+        "booking": {
+            "title": "About Booking",
+            "q1": "When should I book?",
+            "q2": "What is the cancellation policy?",
+            "q3": "Can I change details after booking?"
+        },
+        "equipment": {
+            "title": "About Equipment",
+            "q1": "Are the equipment new and clean?",
+            "q2": "Who installs the equipment?",
+            "q3": "What happens if there's a malfunction?"
+        }
+    },
+    "Blog": {
+        "title": "Blog",
+        "subtitle": "Latest articles and tips",
+        "readTime": "min read",
+        "readMore": "Read More",
+        "relatedArticles": "Related Articles",
+        "shareArticle": "Share this article"
+    },
+    "ChatWidget": {
+        "title": "Chat with Us",
+        "placeholder": "Type your message...",
+        "demoMessage": "Hello! How can I help you? This is a demo chat. Real AI assistant coming soon!",
+        "send": "Send"
+    },
+    "CookieConsent": {
+        "title": "Cookie Consent",
+        "message": "We use cookies to enhance your browsing experience and analyze our traffic.",
+        "accept": "Accept",
+        "decline": "Decline"
+    }
 }

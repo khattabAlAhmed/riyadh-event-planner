@@ -17,7 +17,6 @@ import {
   Field,
   FieldDescription,
   FieldGroup,
-  FieldLabel,
   FieldSeparator,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
@@ -35,7 +34,7 @@ const formSchema = z.object({
   password: z.string().min(8),
 })
 export const signInWithGoogle = async () => {
-  const data = await authClient.signIn.social({
+  await authClient.signIn.social({
       provider: "google",
       callbackURL: `/dashboard`,
   })

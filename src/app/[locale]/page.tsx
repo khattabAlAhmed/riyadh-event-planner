@@ -1,23 +1,228 @@
-import { useTranslations } from "next-intl";
-import LanguageSwitch from "@/components/LanguageSwitch";
-import ModeToggler from "@/components/mode-toggler";
+'use client';
 
-export default function Home() {
+import { useTranslations, useLocale } from 'next-intl';
+import { Hero } from '@/components/shared/Hero';
+import { SectionHeading } from '@/components/shared/SectionHeading';
+import { ServiceCard } from '@/components/shared/ServiceCard';
+import { FeatureCard } from '@/components/shared/FeatureCard';
+import { TestimonialCard } from '@/components/shared/TestimonialCard';
+import { PortfolioCard } from '@/components/shared/PortfolioCard';
+import { CTASection } from '@/components/shared/CTASection';
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import { staggerContainer } from '@/lib/motion-variants';
+import { portfolioItems } from '@/data/portfolio-items';
+import { testimonials } from '@/data/testimonials';
+import { PartyPopper, Building2, Package, Users, Award, Clock, Heart } from 'lucide-react';
+import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
+
+export default function HomePage() {
   const t = useTranslations('HomePage');
-  return (
-    <div>
-      <header className="flex justify-between items-center p-4">
-        <h1 className="text-xl font-bold">{t('title')}</h1>
-        <div className="flex items-center gap-2">
+  const tServices = useTranslations('Services');
+  const locale = useLocale();
 
-        <LanguageSwitch />
-        <ModeToggler />
+  // Get first 6 portfolio items for preview
+  const featuredPortfolio = portfolioItems.slice(0, 6);
+  const featuredTestimonials = testimonials.slice(0, 3);
+
+  const getLocalizedContent = (item: { en: string; ar: string }) => {
+    return locale === 'ar' ? item.ar : item.en;
+  };
+
+  return (
+    <>
+      {/* Hero Section */}
+      <Hero
+        title={t('heroTitle')}
+        subtitle={t('heroSubtitle')}
+        ctaText={t('heroCTA')}
+        ctaHref="/quote-request"
+        backgroundImage="/placeholder-hero.jpg"
+      />
+
+      {/* About Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('aboutTitle')}</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                {t('aboutDescription')}
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative h-96 rounded-lg overflow-hidden"
+            >
+              <Image
+                src="/placeholder-about.jpg"
+                alt="About us"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
         </div>
-      </header>
-      <main className="p-4">
-        <h2 className="text-lg mb-4">{t('welcome')}</h2>
-        <p>{t('test-text')}</p>
-      </main>
-    </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 md:py-24 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title={t('servicesTitle')}
+            align="center"
+          />
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            <ServiceCard
+              title={tServices('eventPlanning.title')}
+              description={tServices('eventPlanning.description')}
+              href="/services/event-planning"
+              icon={<PartyPopper className="h-8 w-8 text-primary" />}
+              image="/placeholder-service-1.jpg"
+            />
+            <ServiceCard
+              title={tServices('exhibitions.title')}
+              description={tServices('exhibitions.tradeExhibitions.description')}
+              href="/services/exhibitions-conferences"
+              icon={<Building2 className="h-8 w-8 text-primary" />}
+              image="/placeholder-service-2.jpg"
+            />
+            <ServiceCard
+              title={tServices('equipmentRental.title')}
+              description={tServices('equipmentRental.description')}
+              href="/services/equipment-rental"
+              icon={<Package className="h-8 w-8 text-primary" />}
+              image="/placeholder-service-3.jpg"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title={t('whyChooseUsTitle')}
+            subtitle={t('whyChooseUsSubtitle')}
+            align="center"
+          />
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            <FeatureCard
+              title="500+ Projects"
+              description="Successful events completed"
+              stat="500+"
+              icon={<Award className="h-8 w-8 text-primary" />}
+            />
+            <FeatureCard
+              title="1000+ Clients"
+              description="Satisfied customers"
+              stat="1000+"
+              icon={<Users className="h-8 w-8 text-primary" />}
+            />
+            <FeatureCard
+              title="10 Years"
+              description="Of experience"
+              stat="10+"
+              icon={<Clock className="h-8 w-8 text-primary" />}
+            />
+            <FeatureCard
+              title="Quality"
+              description="Commitment to excellence"
+              icon={<Heart className="h-8 w-8 text-primary" />}
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Portfolio Preview */}
+      <section className="py-16 md:py-24 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title={t('portfolioTitle')}
+            subtitle={t('portfolioSubtitle')}
+            align="center"
+          />
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+          >
+            {featuredPortfolio.map((item) => (
+              <PortfolioCard
+                key={item.id}
+                title={getLocalizedContent(item.title)}
+                type={item.type}
+                date={item.date}
+                description={getLocalizedContent(item.description)}
+                image={item.image}
+              />
+            ))}
+          </motion.div>
+          <div className="text-center">
+            <Link href="/portfolio">
+              <Button>View All Projects</Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title={t('testimonialsTitle')}
+            subtitle={t('testimonialsSubtitle')}
+            align="center"
+          />
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {featuredTestimonials.map((testimonial) => (
+              <TestimonialCard
+                key={testimonial.id}
+                name={getLocalizedContent(testimonial.name)}
+                role={testimonial.role ? getLocalizedContent(testimonial.role) : undefined}
+                content={getLocalizedContent(testimonial.content)}
+                rating={testimonial.rating}
+                image={testimonial.image}
+              />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <CTASection
+        title={t('finalCTATitle')}
+        subtitle={t('finalCTASubtitle')}
+        ctaText={t('finalCTAButton')}
+        ctaHref="/quote-request"
+      />
+    </>
   );
 }

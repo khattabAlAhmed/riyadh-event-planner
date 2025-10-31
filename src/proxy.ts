@@ -29,7 +29,7 @@ export default async function middleware(request: NextRequest) {
   let locale = routing.defaultLocale;
   if (pathnameHasLocale) {
     const extractedLocale = pathname.split('/')[1];
-    if (routing.locales.includes(extractedLocale as any)) {
+    if (routing.locales.includes(extractedLocale as (typeof routing.locales)[number])) {
       locale = extractedLocale as typeof routing.defaultLocale;
     }
   }

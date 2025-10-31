@@ -2,7 +2,6 @@
 
 import { useRouter, usePathname } from '@/i18n/navigation';
 import { useParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 import { Button } from './ui/button';
 import { GlobeIcon } from 'lucide-react';
 
@@ -10,7 +9,6 @@ export default function LanguageSwitch() {
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
-  const t = useTranslations('LanguageSwitch');
   
   const currentLocale = params.locale as string;
   
