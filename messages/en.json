@@ -1,9 +1,4 @@
 {
-    "HomePage": {
-        "test-text": "Test text",
-        "title": "My App",
-        "welcome": "Welcome to our application!"
-    },
     "LanguageSwitch": {
         "switchToArabic": "Switch to Arabic",
         "switchToEnglish": "Switch to English"
@@ -105,7 +100,8 @@
         "about": "About",
         "contact": "Contact",
         "quoteRequest": "Get Quote",
-        "menu": "Menu"
+        "menu": "Menu",
+        "logo": "Riyadh Event Planner"
     },
     "Footer": {
         "company": "Company",
@@ -121,20 +117,38 @@
         "ourStory": "Our Story",
         "team": "Team",
         "testimonials": "Testimonials",
+        "blog": "Blog",
         "privacyPolicy": "Privacy Policy",
-        "termsOfService": "Terms of Service"
+        "termsOfService": "Terms of Service",
+        "description": "Professional event planning, exhibitions, and equipment rental services in Riyadh",
+        "instagram": "Instagram",
+        "twitter": "Twitter",
+        "facebook": "Facebook"
     },
     "HomePage": {
+        "test-text": "Test text",
+        "title": "My App",
+        "welcome": "Welcome to our application!",
         "heroTitle": "Your Perfect Partner for Event Planning in Riyadh",
         "heroSubtitle": "We turn your dreams into reality with comprehensive professional event planning services",
         "heroCTA": "Get Free Quote",
         "aboutTitle": "Who We Are?",
         "aboutDescription": "We have been providing event planning, exhibitions, and conference services in Riyadh for [X years of experience]. Our professional team of coordinators and designers has a proven track record of successful projects. We are committed to quality and creativity.",
+        "aboutImageAlt": "About us",
         "servicesTitle": "Our Main Services",
         "whyChooseUsTitle": "Why Choose Us?",
         "whyChooseUsSubtitle": "Experience excellence in every event",
+        "featureProjects": "500+ Projects",
+        "featureProjectsDesc": "Successful events completed",
+        "featureClients": "1000+ Clients",
+        "featureClientsDesc": "Satisfied customers",
+        "featureExperience": "10 Years",
+        "featureExperienceDesc": "Of experience",
+        "featureQuality": "Quality",
+        "featureQualityDesc": "Commitment to excellence",
         "portfolioTitle": "Our Portfolio",
         "portfolioSubtitle": "Showcasing our successful projects",
+        "viewAllProjects": "View All Projects",
         "testimonialsTitle": "What Our Clients Say",
         "testimonialsSubtitle": "Trusted by hundreds of satisfied customers",
         "finalCTATitle": "Ready to Start Your Project?",
@@ -145,6 +159,12 @@
         "eventPlanning": {
             "title": "Event Planning",
             "description": "Wedding parties, birthdays, graduations, and all special occasions",
+            "intro": "We provide comprehensive event planning services for all types of celebrations and occasions.",
+            "eventTypesTitle": "Event Types We Organize",
+            "familyEvents": {
+                "title": "Family Events",
+                "description": "Various family celebrations including engagements, baby showers, and anniversaries."
+            },
             "weddings": {
                 "title": "Wedding Parties",
                 "description": "Complete coordination from start to finish",
@@ -165,7 +185,10 @@
                 "step3": "Design",
                 "step4": "Execution",
                 "step5": "Follow-up"
-            }
+            },
+            "ctaTitle": "Ready to Plan Your Event?",
+            "ctaSubtitle": "Contact us today for a free consultation",
+            "ctaButton": "Get Quote"
         },
         "exhibitions": {
             "title": "Exhibitions & Conferences",
@@ -289,8 +312,17 @@
         "coolingHeating": "Cooling & Heating",
         "additionalServices": "Additional Services",
         "budget": "Estimated Budget",
+        "under5000": "Under 5,000 SAR",
+        "5000to10000": "5,000 - 10,000 SAR",
+        "10000to20000": "10,000 - 20,000 SAR",
+        "20000to50000": "20,000 - 50,000 SAR",
+        "over50000": "Over 50,000 SAR",
+        "open": "Open budget",
         "additionalNotes": "Additional Notes or Special Requests",
         "notesPlaceholder": "Share any additional details or special ideas for your event",
+        "optional": "Optional",
+        "locationPlaceholder": "Home, Specific hall, Garden, etc.",
+        "selectBudgetRange": "Select budget range",
         "success": "Thank you! Your request has been received and we'll contact you soon.",
         "error": "An error occurred. Please try again."
     },
@@ -302,6 +334,8 @@
         "whatsappLabel": "WhatsApp",
         "emailLabel": "Email",
         "addressLabel": "Address",
+        "address": "Riyadh, Saudi Arabia",
+        "workingHours": "Saturday-Thursday, 9AM-6PM",
         "hoursLabel": "Working Hours",
         "hoursValue": "Saturday-Thursday, 9AM-6PM",
         "formTitle": "Quick Contact Form",
@@ -310,7 +344,8 @@
         "message": "Message",
         "send": "Send",
         "success": "Message sent successfully! We'll get back to you soon.",
-        "error": "Failed to send message. Please try again."
+        "error": "Failed to send message. Please try again.",
+        "mapPlaceholder": "Google Maps will be embedded here"
     },
     "Portfolio": {
         "title": "Our Previous Projects",
@@ -328,6 +363,7 @@
     "About": {
         "title": "About Us",
         "ourStory": "Our Story",
+        "ourStoryText": "We are a leading event planning company in Riyadh, dedicated to creating unforgettable experiences. With years of expertise in organizing weddings, corporate events, exhibitions, and conferences, we have built a reputation for excellence and attention to detail.",
         "vision": "Vision",
         "mission": "Mission",
         "values": "Values",

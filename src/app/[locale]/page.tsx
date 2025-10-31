@@ -63,7 +63,7 @@ export default function HomePage() {
             >
               <Image
                 src="/placeholder-about.jpg"
-                alt="About us"
+                alt={t('aboutImageAlt')}
                 fill
                 className="object-cover"
               />
@@ -127,26 +127,26 @@ export default function HomePage() {
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             <FeatureCard
-              title="500+ Projects"
-              description="Successful events completed"
+              title={t('featureProjects')}
+              description={t('featureProjectsDesc')}
               stat="500+"
               icon={<Award className="h-8 w-8 text-primary" />}
             />
             <FeatureCard
-              title="1000+ Clients"
-              description="Satisfied customers"
+              title={t('featureClients')}
+              description={t('featureClientsDesc')}
               stat="1000+"
               icon={<Users className="h-8 w-8 text-primary" />}
             />
             <FeatureCard
-              title="10 Years"
-              description="Of experience"
+              title={t('featureExperience')}
+              description={t('featureExperienceDesc')}
               stat="10+"
               icon={<Clock className="h-8 w-8 text-primary" />}
             />
             <FeatureCard
-              title="Quality"
-              description="Commitment to excellence"
+              title={t('featureQuality')}
+              description={t('featureQualityDesc')}
               icon={<Heart className="h-8 w-8 text-primary" />}
             />
           </motion.div>
@@ -181,7 +181,7 @@ export default function HomePage() {
           </motion.div>
           <div className="text-center">
             <Link href="/portfolio">
-              <Button>View All Projects</Button>
+              <Button>{t('viewAllProjects')}</Button>
             </Link>
           </div>
         </div>

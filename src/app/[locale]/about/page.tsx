@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="mt-12 max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold mb-4">{t('ourStory')}</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {t('ourStoryText')}
         </p>
       </section>
 

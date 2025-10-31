@@ -12,6 +12,7 @@ interface ContactInfoProps {
 
 export function ContactInfo({ className, showIcon = true }: ContactInfoProps) {
   const t = useTranslations('Common');
+  const tContact = useTranslations('Contact');
 
   return (
     <div className={cn('space-y-4', className)}>
@@ -60,7 +61,7 @@ export function ContactInfo({ className, showIcon = true }: ContactInfoProps) {
         {showIcon && <MapPin className="h-5 w-5 mt-0.5 text-primary" />}
         <div>
           <p className="text-sm font-medium">{t('address')}</p>
-          <p className="text-muted-foreground">{SITE_CONFIG.contact.address}</p>
+          <p className="text-muted-foreground">{tContact('address')}</p>
         </div>
       </div>
 
@@ -68,7 +69,7 @@ export function ContactInfo({ className, showIcon = true }: ContactInfoProps) {
         {showIcon && <Clock className="h-5 w-5 mt-0.5 text-primary" />}
         <div>
           <p className="text-sm font-medium">{t('workingHours')}</p>
-          <p className="text-muted-foreground">{SITE_CONFIG.contact.workingHours}</p>
+          <p className="text-muted-foreground">{tContact('workingHours')}</p>
         </div>
       </div>
     </div>

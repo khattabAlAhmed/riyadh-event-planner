@@ -26,13 +26,13 @@ export default function EventPlanningPage() {
         {/* Introduction */}
         <section className="max-w-4xl mx-auto mb-16">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            We provide comprehensive event planning services for all types of celebrations and occasions.
+            {t('intro')}
           </p>
         </section>
 
         {/* Event Types */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Event Types We Organize</h2>
+          <h2 className="text-3xl font-bold mb-8">{t('eventTypesTitle')}</h2>
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -74,11 +74,11 @@ export default function EventPlanningPage() {
             <Card>
               <CardHeader>
                 <Users className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Family Events</CardTitle>
+                <CardTitle>{t('familyEvents.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Various family celebrations including engagements, baby showers, and anniversaries.
+                  {t('familyEvents.description')}
                 </p>
               </CardContent>
             </Card>
@@ -112,9 +112,9 @@ export default function EventPlanningPage() {
       </div>
 
       <CTASection
-        title="Ready to Plan Your Event?"
-        subtitle="Contact us today for a free consultation"
-        ctaText="Get Quote"
+        title={t('ctaTitle')}
+        subtitle={t('ctaSubtitle')}
+        ctaText={t('ctaButton')}
         ctaHref="/quote-request"
       />
     </>

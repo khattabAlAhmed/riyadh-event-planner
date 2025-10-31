@@ -25,7 +25,6 @@ interface ShareButtonsProps {
 export function ShareButtons({
   url,
   title = SITE_CONFIG.name,
-  description = SITE_CONFIG.description,
   className,
 }: ShareButtonsProps) {
   const t = useTranslations('Common');

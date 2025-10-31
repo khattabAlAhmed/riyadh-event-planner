@@ -7,6 +7,7 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 export function Footer() {
   const t = useTranslations('Footer');
+  const tContact = useTranslations('Contact');
 
   const serviceLinks = [
     { href: '/services/event-planning', label: t('eventPlanning') },
@@ -29,7 +30,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">{t('company')}</h3>
             <p className="text-sm text-muted-foreground">
-              {SITE_CONFIG.description}
+              {t('description')}
             </p>
             <div className="flex gap-4">
               <a
@@ -37,7 +38,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Instagram"
+                aria-label={t('instagram')}
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -46,7 +47,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Twitter"
+                aria-label={t('twitter')}
               >
                 <Twitter className="h-5 w-5" />
               </a>
@@ -55,7 +56,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Facebook"
+                aria-label={t('facebook')}
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -126,7 +127,7 @@ export function Footer() {
                   {SITE_CONFIG.contact.email}
                 </a>
               </li>
-              <li>{SITE_CONFIG.contact.workingHours}</li>
+              <li>{tContact('workingHours')}</li>
             </ul>
           </div>
         </div>

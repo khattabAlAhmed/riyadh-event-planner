@@ -45,7 +45,7 @@ export default function ContactPage() {
         <Card>
           <CardContent className="p-0">
             <div className="relative h-96 w-full bg-muted rounded-lg flex items-center justify-center">
-              <p className="text-muted-foreground">Google Maps will be embedded here</p>
+              <p className="text-muted-foreground">{t('mapPlaceholder')}</p>
             </div>
           </CardContent>
         </Card>

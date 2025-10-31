@@ -158,7 +158,7 @@ export function QuoteRequestForm() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('email')} (Optional)</FormLabel>
+                      <FormLabel>{t('email')} ({t('optional')})</FormLabel>
                       <FormControl>
                         <Input type="email" {...field} />
                       </FormControl>
@@ -298,7 +298,7 @@ export function QuoteRequestForm() {
                     <FormItem>
                       <FormLabel>{t('location')}</FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="Home, Specific hall, Garden, etc." />
+                        <Input {...field} placeholder={t('locationPlaceholder')} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -365,11 +365,11 @@ export function QuoteRequestForm() {
                   name="budget"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('budget')} (Optional)</FormLabel>
+                      <FormLabel>{t('budget')} ({t('optional')})</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder="Select budget range" />
+                            <SelectValue placeholder={t('selectBudgetRange')} />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
