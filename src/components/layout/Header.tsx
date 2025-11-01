@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { Link, usePathname } from '@/i18n/navigation';
+import Image from 'next/image';
 import { Menu, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -77,7 +78,15 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold">{t('logo')}</span>
+          <Image
+            src="/logo.png"
+            alt={t('logo')}
+            width={120}
+            height={40}
+            className="h-10 w-auto"
+            priority
+          />
+                    {/* <span className="text-xl font-bold">{t('logo')}</span> */}
         </Link>
 
         {/* Desktop Navigation */}

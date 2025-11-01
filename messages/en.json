@@ -580,7 +580,8 @@
             "eventTimeRequired": "Please select an event time",
             "attendanceRequired": "Please select expected attendance",
             "locationMin": "Location must be at least 3 characters",
-            "servicesRequired": "Please select at least one service"
+            "servicesRequired": "Please select at least one service",
+            "budgetRequired": "Please select a budget range"
         },
         "eventType": "Event Type",
         "eventDate": "Event Date",

@@ -28,8 +28,78 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { toast } from 'sonner';
 import { CITIES, EVENT_TYPES, ATTENDANCE_RANGES, TIME_SLOTS, BUDGET_RANGES } from '@/lib/constants';
+import arMessages from '../../../messages/ar.json';
 
 const STEPS = 4;
+const N8N_WEBHOOK_URL = 'https://n8n.alriyadah-medical.org/webhook/ab527808-6b24-415c-9fb9-1fe5931993df';
+
+// Helper function to format form data into Arabic message
+function formatArabicMessage(data: QuoteRequestFormData): string {
+  const t = (key: string) => {
+    const keys = key.split('.');
+    let value: any = arMessages.QuoteRequest;
+    for (const k of keys) {
+      value = value?.[k];
+    }
+    return value || key;
+  };
+
+  const formatDate = (date: Date | undefined): string => {
+    if (!date) return '';
+    const arabicMonths = [
+      'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
+      'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'
+    ];
+    const day = date.getDate();
+    const month = arabicMonths[date.getMonth()];
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+  };
+
+  const selectedServices = Object.entries(data.services)
+    .filter(([_, selected]) => selected)
+    .map(([key, _]) => t(key));
+
+  let message = '📋 *طلب عرض سعر جديد*\n\n';
+  
+  // Contact Information
+  message += '*معلومات التواصل:*\n';
+  message += `${t('fullName')}: ${data.fullName}\n`;
+  message += `${t('phone')}: ${data.phone}\n`;
+  if (data.email) {
+    message += `${t('email')}: ${data.email}\n`;
+  }
+  message += `${t('city')}: ${t(`cities.${data.city}`)}\n\n`;
+
+  // Event Details
+  message += '*تفاصيل المناسبة:*\n';
+  message += `${t('eventType')}: ${t(data.eventType || '')}\n`;
+  message += `${t('eventDate')}: ${formatDate(data.eventDate)}\n`;
+  message += `${t('eventTime')}: ${t(data.eventTime || '')}\n`;
+  message += `${t('attendance')}: ${t(data.attendance || '')}\n`;
+  message += `${t('location')}: ${data.location}\n\n`;
+
+  // Services
+  message += '*الخدمات المطلوبة:*\n';
+  if (selectedServices.length > 0) {
+    selectedServices.forEach((service, index) => {
+      message += `${index + 1}. ${service}\n`;
+    });
+  }
+  message += '\n';
+
+  // Budget
+  if (data.budget) {
+    message += `${t('budget')}: ${t(data.budget)}\n\n`;
+  }
+
+  // Additional Notes
+  if (data.additionalNotes) {
+    message += `${t('additionalNotes')}:\n${data.additionalNotes}\n`;
+  }
+
+  return message;
+}
 
 export function QuoteRequestForm() {
   const t = useTranslations('QuoteRequest');
@@ -93,12 +163,27 @@ export function QuoteRequestForm() {
   };
 
   const onSubmit = async (data: QuoteRequestFormData) => {
+    // Prevent submission if not on the final step
+    if (currentStep !== STEPS) {
+      return;
+    }
+
+    // Validate budget before submitting
+    const isValid = await form.trigger('budget');
+    if (!isValid) {
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      const response = await fetch('/api/quote-request', {
+      // Format the message in Arabic
+      const arabicMessage = formatArabicMessage(data);
+
+      // Send to n8n webhook - message as plain string
+      const response = await fetch(N8N_WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+        body: arabicMessage,
       });
 
       if (!response.ok) throw new Error('Failed to submit');
@@ -368,7 +453,7 @@ export function QuoteRequestForm() {
                   name="budget"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('budget')} ({t('optional')})</FormLabel>
+                      <FormLabel>{t('budget')}</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
@@ -418,13 +503,13 @@ export function QuoteRequestForm() {
               >
                 {tCommon('previous')}
               </Button>
-              {currentStep < STEPS ? (
-                <Button type="button" onClick={nextStep}>
-                  {tCommon('next')}
-                </Button>
-              ) : (
+              {currentStep === STEPS ? (
                 <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? tCommon('loading') : tCommon('submit')}
+                </Button>
+              ) : (
+                <Button type="button" onClick={nextStep}>
+                  {tCommon('next')}
                 </Button>
               )}
             </div>

@@ -42,7 +42,9 @@ export const createQuoteRequestSchema = (t: (key: string) => string) => z.object
   }),
 
   // Step 4: Budget & Notes
-  budget: z.enum([...BUDGET_RANGES] as [string, ...string[]]).optional(),
+  budget: z.enum([...BUDGET_RANGES] as [string, ...string[]], {
+    message: t('errors.budgetRequired'),
+  }),
   additionalNotes: z.string().optional(),
 });
 
@@ -59,6 +61,7 @@ export const quoteRequestSchema = createQuoteRequestSchema((key: string) => {
     'errors.attendanceRequired': 'Please select expected attendance',
     'errors.locationMin': 'Location must be at least 3 characters',
     'errors.servicesRequired': 'Please select at least one service',
+    'errors.budgetRequired': 'Please select a budget range',
   };
   return messages[key] || key;
 });

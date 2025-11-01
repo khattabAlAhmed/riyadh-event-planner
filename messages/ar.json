@@ -581,7 +581,8 @@
             "eventTimeRequired": "يرجى اختيار وقت المناسبة",
             "attendanceRequired": "يرجى اختيار عدد الحضور المتوقع",
             "locationMin": "الموقع يجب أن يكون على الأقل 3 أحرف",
-            "servicesRequired": "يرجى اختيار خدمة واحدة على الأقل"
+            "servicesRequired": "يرجى اختيار خدمة واحدة على الأقل",
+            "budgetRequired": "يرجى اختيار نطاق الميزانية"
         },
         "eventType": "نوع المناسبة",
         "eventDate": "تاريخ المناسبة",

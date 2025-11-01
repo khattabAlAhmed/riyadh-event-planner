@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { HexagonBackground } from '../animate-ui/components/backgrounds/hexagon';
@@ -30,7 +31,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pointer-events-auto">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">{t('company')}</h3>
+            <Link href="/" className="block">
+              <Image
+                src="/logo.png"
+                alt={t('company')}
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </Link>
             <p className="text-sm text-muted-foreground">
               {t('description')}
             </p>
