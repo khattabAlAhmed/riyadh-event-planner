@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
+import { blogPosts } from '@/data/blog-posts';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://riyadheventplanner.com';
 
@@ -22,11 +23,12 @@ const pages = [
 
 // Blog articles slugs (will be populated from data later)
 const blogArticles = [
-  'dليل-شامل-لتنظيم-حفل-زفاف-ناجح-في-الرياض',
+  'دليل-شامل-لتنظيم-حفل-زفاف-ناجح-في-الرياض',
   'أفضل-أنواع-الخيام-الأوروبية-لحفلات-الزفاف',
   'كيف-تختار-الديكور-المناسب-لحفل-التخرج',
   '10-أفكار-إبداعية-لحفلات-أعياد-الميلاد-للأطفال',
   'أهمية-التخطيط-المسبق-لتنظيم-المعارض-التجارية',
+
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -45,14 +47,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
 
     // Add blog articles
-    blogArticles.forEach((slug) => {
+    // blogArticles.forEach((slug) => {
+    //   routes.push({
+    //     url: `${baseUrl}/${locale}/blog/${slug}`,
+    //     lastModified: new Date(),
+    //     changeFrequency: 'monthly',
+    //     priority: 0.6,
+    //   });
+    // });
+    blogPosts.forEach((post) => {
       routes.push({
-        url: `${baseUrl}/${locale}/blog/${slug}`,
-        lastModified: new Date(),
+        url: `${baseUrl}/${locale}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
         changeFrequency: 'monthly',
         priority: 0.6,
       });
     });
+  
   });
 
   return routes;

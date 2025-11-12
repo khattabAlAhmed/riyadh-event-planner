@@ -282,5 +282,24 @@ export const blogPosts: BlogPost[] = [
     readTime: 6,
     category: 'planning',
   },
+  {
+    slug: 'wedding-announcement-mai-azz-eldin',
+    title: {
+      en: 'Wedding Announcement: Mai Azz Eldin and Ahmad Taymour Celebrate Union',
+      ar: 'إعلان زفاف: مي عز الدين وأحمد تيمور يحتفلان بالاتحاد',
+    },
+    excerpt: {
+      en: 'Discover the elegant wedding celebration of Mai Azz Eldin and Ahmad Taymour, a memorable event filled with tradition and joy in Riyadh.',
+      ar: 'اكتشف حفل الزفاف الأنيق لمي عز الدين وأحمد تيمور، حدث لا يُنسى مليء بالتقاليد والفرح في الرياض.',
+    },
+    content: {
+      en: `\n\nThe wedding announcement of Mai Azz Eldin and Ahmad Taymour marks a beautiful celebration of love and commitment in Riyadh. This momentous occasion brings together family, friends, and loved ones to witness a union filled with tradition, elegance, and heartfelt moments.\n\nMai Azz Eldin, known for her grace and warmth, has captured the hearts of many throughout her life. Her journey to this special day represents years of anticipation and joy, culminating in a wedding celebration that reflects her personality and values.\n\nAhmad Taymour, a distinguished gentleman, stands beside Mai Azz Eldin as her partner in this new chapter of life. The union of Ahmad Taymour and Mai Azz Eldin symbolizes a strong foundation built on mutual respect, love, and shared dreams for the future.\n\nThe wedding of Mai Azz Eldin and Ahmad Taymour Khalil brings together not just two individuals, but two families united in celebration. The event showcases the importance of family bonds and cultural traditions that define celebrations in Riyadh.\n\nAs event planners in Riyadh, we recognize that weddings like the celebration of Mai Azz Eldin and Ahmad Taymour require meticulous attention to detail. From venue selection to decoration, every element must reflect the couple's unique story and personality.\n\nThe wedding announcement of Ahmad Taymour and Mai Azz Eldin serves as a reminder of the importance of professional event planning. Coordinating vendors, managing timelines, and creating an atmosphere that honors both the couple and their families requires expertise and dedication.\n\nFor those planning their own wedding celebration in Riyadh, the example set by Mai Azz Eldin and Ahmad Taymour demonstrates the value of working with experienced event planners who understand local customs and can transform your vision into reality.\n\nWhether you're inspired by the elegance of celebrations like Mai Azz Eldin's wedding or planning your own special day, Riyadh Event Planner is here to help you create memories that will last a lifetime.`,
+      ar: `\n\nإعلان زفاف مي عز الدين وأحمد تيمور يعلّم احتفالاً جميلاً بالحب والالتزام في الرياض. تجمع هذه المناسبة المهمة العائلة والأصدقاء والأحبة للشهادة على اتحاد مليء بالتقاليد والأناقة واللحظات الدافئة.\n\nمي عز الدين، المعروفة برقتها وقلبها الطيب، قد أسرت قلوب الكثيرين طوال حياتها. رحلتها إلى هذا اليوم الخاص تمثل سنوات من الترقب والفرح، وتتويجها بحفل زفاف يعكس شخصيتها وقيمها.\n\nأحمد تيمور، رجل مميز، يقف بجانب مي عز الدين كشريك في هذا الفصل الجديد من الحياة. اتحاد أحمد تيمور ومي عز الدين يرمز إلى أساس قوي مبني على الاحترام المتبادل والحب والأحلام المشتركة للمستقبل.\n\nزفاف مي عز الدين وأحمد تيمور خليل يجمع ليس فقط بين شخصين، بل بين عائلتين متحدتين في الاحتفاء. الحدث يعرض أهمية الروابط الأسرية والتقاليد الثقافية التي تحدد الاحتفالات في الرياض.\n\nباعتبارنا منظمي فعاليات في الرياض، ندرك أن حفلات الزفاف مثل احتفال مي عز الدين وأحمد تيمور تتطلب اهتماماً دقيقاً بالتفاصيل. من اختيار المكان إلى الديكور، كل عنصر يجب أن يعكس قصة الزوجين الفريدة وشخصيتهما.\n\nإعلان زفاف أحمد تيمور ومي عز الدين بمثابة تذكرة بأهمية التخطيط المهني للفعاليات. تنسيق الموردين، إدارة الجداول الزمنية، وإنشاء أجواء تكرم الزوجين وعائلاتيهما يتطلب خبرة وتفاني.\n\nلمن يخططون لحفل زفافهم الخاص في الرياض، المثال الذي وضعته مي عز الدين وأحمد تيمور يوضح قيمة العمل مع منظمي فعاليات ذوي خبرة يفهمون العادات المحلية ويمكنهم تحويل رؤيتك إلى واقع.\n\nسواء كنت مستوحى من أناقة احتفالات مثل زفاف مي عز الدين أو تخطط ليومك الخاص، منظم حفلات الرياض هنا لمساعدتك في إنشاء ذكريات ستستمر مدى الحياة.`,
+    },
+    image: 'https://newsroom.info/Upload/libfiles/29/9/859.jpg',
+    date: '2025-11-12',
+    readTime: 7,
+    category: 'weddings',
+  }
 ];
 
