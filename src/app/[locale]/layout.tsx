@@ -13,6 +13,8 @@ import { TopLoader } from "@/components/layout/TopLoader";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { ChatWidget } from "@/components/features/ChatWidget";
+import { Analytics } from "@vercel/analytics/next"
+
 
 
 type Props = {
@@ -22,13 +24,13 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  
+
   return {
     title: {
       default: "Riyadh Event Planner",
       template: "%s | Riyadh Event Planner",
     },
-    description: locale === 'ar' 
+    description: locale === 'ar'
       ? "شركة تنظيم حفلات ومعارض ومؤتمرات في الرياض. خدمات تنسيق شاملة، تأجير خيام أوروبية، كراسي، طاولات ومعدات."
       : "Professional event planning, exhibitions, and equipment rental services in Riyadh. Comprehensive coordination, European tent rental, chairs, tables and equipment.",
   };
@@ -40,7 +42,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-  
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
@@ -75,6 +77,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           </NextIntlClientProvider>
         </ThemeProvider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
