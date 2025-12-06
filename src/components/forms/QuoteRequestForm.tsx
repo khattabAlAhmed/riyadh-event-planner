@@ -31,7 +31,10 @@ import { CITIES, EVENT_TYPES, ATTENDANCE_RANGES, TIME_SLOTS, BUDGET_RANGES } fro
 import arMessages from '../../../messages/ar.json';
 
 const STEPS = 4;
-const N8N_WEBHOOK_URL = 'https://n8n.alriyadah-medical.org/webhook/ab527808-6b24-415c-9fb9-1fe5931993df';
+
+// Telegram Bot Configuration (from environment variables)
+const TELEGRAM_BOT_TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN || '';
+const TELEGRAM_CHAT_ID = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID || '';
 
 // Helper function to format form data into Arabic message
 function formatArabicMessage(data: QuoteRequestFormData): string {
@@ -61,7 +64,7 @@ function formatArabicMessage(data: QuoteRequestFormData): string {
     .map(([key, _]) => t(key));
 
   let message = '📋 *طلب عرض سعر جديد*\n\n';
-  
+
   // Contact Information
   message += '*معلومات التواصل:*\n';
   message += `${t('fullName')}: ${data.fullName}\n`;
@@ -143,7 +146,7 @@ export function QuoteRequestForm() {
 
   const nextStep = async () => {
     let fieldsToValidate: Array<keyof QuoteRequestFormData> = [];
-    
+
     if (currentStep === 1) {
       fieldsToValidate = ['fullName', 'phone', 'city'];
     } else if (currentStep === 2) {
@@ -179,11 +182,16 @@ export function QuoteRequestForm() {
       // Format the message in Arabic
       const arabicMessage = formatArabicMessage(data);
 
-      // Send to n8n webhook - message as plain string
-      const response = await fetch(N8N_WEBHOOK_URL, {
+      // Send to Telegram via Bot API
+      const telegramApiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+      const response = await fetch(telegramApiUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-        body: arabicMessage,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: arabicMessage,
+          parse_mode: 'Markdown',
+        }),
       });
 
       if (!response.ok) throw new Error('Failed to submit');
@@ -417,24 +425,24 @@ export function QuoteRequestForm() {
                         ].map((service) => {
                           const fieldName = `services.${service.key}` as keyof QuoteRequestFormData | `services.${string}`;
                           return (
-                          <FormField
-                            key={service.key}
-                            control={form.control}
-                            name={fieldName as never}
-                            render={({ field }) => (
-                              <FormItem className="flex items-start space-x-3 space-y-0">
-                                <FormControl>
-                                  <Checkbox
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                  />
-                                </FormControl>
-                                <FormLabel className="font-normal cursor-pointer">
-                                  {service.label}
-                                </FormLabel>
-                              </FormItem>
-                            )}
-                          />
+                            <FormField
+                              key={service.key}
+                              control={form.control}
+                              name={fieldName as never}
+                              render={({ field }) => (
+                                <FormItem className="flex items-start space-x-3 space-y-0">
+                                  <FormControl>
+                                    <Checkbox
+                                      checked={field.value}
+                                      onCheckedChange={field.onChange}
+                                    />
+                                  </FormControl>
+                                  <FormLabel className="font-normal cursor-pointer">
+                                    {service.label}
+                                  </FormLabel>
+                                </FormItem>
+                              )}
+                            />
                           );
                         })}
                       </div>
