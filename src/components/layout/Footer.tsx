@@ -1,15 +1,17 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { HexagonBackground } from '../animate-ui/components/backgrounds/hexagon';
+import { BuiltWithLove } from '../BuiltWithLove';
 
 export function Footer() {
   const t = useTranslations('Footer');
   const tContact = useTranslations('Contact');
+  const locale = useLocale();
 
   const serviceLinks = [
     { href: '/services/event-planning', label: t('eventPlanning') },
@@ -147,13 +149,18 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t border-border pointer-events-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. {t('allRightsReserved')}.</p>
-            <div className="flex gap-4">
-              <Link href="/privacy" className="hover:text-foreground transition-colors">
-                {t('privacyPolicy')}
-              </Link>
-              <Link href="/terms" className="hover:text-foreground transition-colors">
-                {t('termsOfService')}
-              </Link>
+
+            <div className="flex items-center gap-6">
+              <BuiltWithLove lang={locale as "en" | "ar"} />
+
+              <div className="flex gap-4">
+                <Link href="/privacy" className="hover:text-foreground transition-colors">
+                  {t('privacyPolicy')}
+                </Link>
+                <Link href="/terms" className="hover:text-foreground transition-colors">
+                  {t('termsOfService')}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
